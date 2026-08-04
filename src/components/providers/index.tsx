@@ -1,16 +1,15 @@
-import { Aura } from "../../theme"
+import { Aura } from "../../theme";
 import { PrimeReactProvider } from "@primereact/core";
-
 
 const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
     <PrimeReactProvider
-      theme={{ preset: Aura }}
+      theme={{ preset: Aura, options: { darkModeSelector: "none" } }}
       license={import.meta.env.PRIME_REACT_LICENSE}
     >
       {children}
     </PrimeReactProvider>
-  )
-}
+  );
+};
 
-export default Providers
+export default Providers;

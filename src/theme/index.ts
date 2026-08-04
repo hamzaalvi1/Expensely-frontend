@@ -1,6 +1,6 @@
 import { definePreset } from "@primeuix/themes";
 import AuraTheme from "@primeuix/themes/aura";
-import "./font.css";
+import "./root.css";
 import { Primary } from "./colors";
 import { Typography } from "./typography";
 import { FormField, FocusRing, List, Navigation, Overlay } from "./misc";
