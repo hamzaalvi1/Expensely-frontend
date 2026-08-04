@@ -1,0 +1,33 @@
+.p-grid {
+  display: grid;
+  min-width: 0;
+}
+
+.p-grid-inline {
+  display: inline-grid;
+}
+
+.p-grid-columns-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.p-grid-columns-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.p-grid-columns-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.p-grid-columns-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.p-grid-columns-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.p-grid-columns-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.p-grid-columns-12 { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+
+.p-grid-gap-none { gap: 0; }
+.p-grid-gap-xs { gap: 0.25rem; }
+.p-grid-gap-sm { gap: 0.5rem; }
+.p-grid-gap-md { gap: 1rem; }
+.p-grid-gap-lg { gap: 1.5rem; }
+.p-grid-gap-xl { gap: 2rem; }
+
+.p-grid-align-start { align-items: start; }
+.p-grid-align-center { align-items: center; }
+.p-grid-align-end { align-items: end; }
+.p-grid-align-stretch { align-items: stretch; }
+
+.p-grid-justify-start { justify-items: start; }
+.p-grid-justify-center { justify-items: center; }
+.p-grid-justify-end { justify-items: end; }
+.p-grid-justify-stretch { justify-items: stretch; }

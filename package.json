@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "start": "vite preview",
     "lint": "oxlint",
     "preview": "vite preview"
   },
@@ -21,7 +22,8 @@
     "@tanstack/react-query-devtools": "^5.101.4",
     "clsx": "^2.1.1",
     "react": "^19.2.7",
-    "react-dom": "^19.2.7"
+    "react-dom": "^19.2.7",
+    "react-router-dom": "^7.18.2"
   },
   "devDependencies": {
     "@tanstack/eslint-plugin-query": "^5.101.4",
