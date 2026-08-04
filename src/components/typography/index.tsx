@@ -8,7 +8,7 @@ export const Typography = ({
   as,
   variant = "body",
   weight,
-  color = "inherit",
+  color = "primary",
   align,
   truncate = false,
   className,
@@ -40,4 +40,3 @@ export const Typography = ({
     children,
   );
 };
-

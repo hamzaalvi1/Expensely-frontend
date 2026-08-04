@@ -4,7 +4,7 @@ function App() {
 
   return (
     <>
-     <Typography variant="h1" color="primary">HELLO WORLD</Typography>
+     <Typography>HELLO WORLD</Typography>
      <Button >
       Click</Button>
     </>

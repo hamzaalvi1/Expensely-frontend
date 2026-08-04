@@ -4,7 +4,7 @@ import clsx from "clsx";
 export function getTypographyClasses({
   variant = "body",
   weight,
-  color = "inherit",
+  color = "primary",
   align,
   truncate = false,
 }: TypographyClassOptions = {}): string {
