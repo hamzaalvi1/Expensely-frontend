@@ -20,7 +20,7 @@ export const routeConfig: RouteObject[] = [
         loader: rootLoader,
       },
       {
-        path: LANGUAGE,
+        path: `${LANGUAGE}?`,
         loader: languageLoader,
         children: [
           {
