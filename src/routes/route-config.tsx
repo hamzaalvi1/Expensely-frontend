@@ -7,6 +7,8 @@ import {
 import App from "../App";
 import { type RouteObject } from "react-router-dom";
 import { ROUTES_PATHS } from "../constants/routes";
+import AuthLayout from "../layouts/auth-layouts";
+import { Login } from "../pages/auth/login";
 
 const { ROOT, LANGUAGE, DASHBOARD, LOGIN } = ROUTES_PATHS;
 
@@ -24,8 +26,14 @@ export const routeConfig: RouteObject[] = [
         loader: languageLoader,
         children: [
           {
-            path: LOGIN,
+            element: <AuthLayout />,
             loader: guestOnlyLoader,
+            children: [
+              {
+                path: LOGIN,
+                element: <Login />,
+              },
+            ],
           },
           {
             path: DASHBOARD,

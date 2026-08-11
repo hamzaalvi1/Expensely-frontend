@@ -33,4 +33,3 @@ export const GridItem = ({
   );
 };
 
-export default GridItem;

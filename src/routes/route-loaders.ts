@@ -7,7 +7,7 @@ import { localizedPath } from "../helpers/localize-path";
 import { DEFAULT_LANGUAGE } from "../constants/lang";
 
 // Temporary placeholder until authentication is connected to the API/session.
-const isAuthenticated = () => true;
+const isAuthenticated = () => false;
 
 type LanguageRouteLoaderArgs = {
   params: { lang?: string };
