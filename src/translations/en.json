@@ -2,5 +2,12 @@
   "app": {
     "title": "HELLO WORLD",
     "button": "Click"
+  },
+  "auth": {
+    "title": "Understand where your money goes.",
+    "description": "Track income, spending, budgets and financial patterns from one organized workspace.",
+    "monthly-overview": "Monthly Overview",
+    "total-spending": "Total Spending",
+    "12%_increase": "+12%"
   }
 }

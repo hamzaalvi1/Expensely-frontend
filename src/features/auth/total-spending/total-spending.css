@@ -1,0 +1,18 @@
+.total-spending {
+  border-top: 1px solid var(--p-secondary-50);
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.p-badge.p-badge-secondary.total-spending-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--p-primary-500);
+}
+
+.p-badge.p-badge-secondary.total-spending-badge svg {
+  color: inherit;
+}

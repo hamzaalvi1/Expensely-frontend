@@ -9,6 +9,7 @@ export type TypographyColor =
   | "inherit"
   | "primary"
   | "secondary"
+  | "gray"
   | "muted"
   | "surface"
   | "success"
@@ -33,7 +34,8 @@ export interface TypographyProps extends HTMLAttributes<HTMLElement> {
 export const colors: Record<TypographyColor, string> = {
   inherit: "inherit",
   primary: "#000000",
-  secondary: "var(--p-text-color)",
+  secondary: "var(--p-text-secondary-color)",
+  gray: "#6b7280",
   muted: "var(--p-text-muted-color)",
   surface: "var(--p-surface-700)",
   success: "var(--p-green-500)",

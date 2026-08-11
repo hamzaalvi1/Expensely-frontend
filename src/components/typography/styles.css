@@ -1,6 +1,6 @@
 .p-typography {
   margin: 0;
-  font-family: var(--p-typography-font-family, "Figtree", sans-serif);
+  font-family: var(--p-typography-font-family, "Poppins", sans-serif);
 }
 
 .p-typography-h1 { font-size: 2.25rem; line-height: 1.2; font-weight: 700; }
@@ -14,7 +14,8 @@
 
 .p-typography-color-inherit { color: inherit; }
 .p-typography-color-primary { color: #000; }
-.p-typography-color-secondary { color: var(--p-text-color); }
+.p-typography-color-secondary { color: var(--p-text-secondary-color); }
+.p-typography-color-gray { color: #6b7280; }
 .p-typography-color-muted { color: var(--p-text-muted-color); }
 .p-typography-color-surface { color: var(--p-surface-700); }
 .p-typography-color-success { color: var(--p-green-500); }
