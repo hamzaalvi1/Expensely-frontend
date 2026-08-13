@@ -1,40 +1,48 @@
-import { definePreset } from "@primeuix/themes";
-import AuraTheme from "@primeuix/themes/aura";
-import "./root.css";
-import { Neutral, Primary, Secondary } from "./colors";
-import { Typography } from "./typography";
-import { FormField, FocusRing, List, Navigation, Overlay } from "./misc";
-import { ButtonComponent } from "./components/button";
-import { BadgeComponent } from "./components/badge";
-import { CardComponent } from "./components/card";
-import { InputTextComponent } from "./components/inputtext";
-import { ColorSchemeLight } from "./color-scheme";
+import { createTheme } from "@mantine/core";
+import { Shadows } from "./shadows";
 
-export const Aura = definePreset(AuraTheme, {
-  semantic: {
-    transitionDuration: "0.2s",
-    disabledOpacity: "0.6",
-    iconSize: "0.875rem",
-    anchorGutter: "2px",
-    typography: Typography,
-    primary: Primary,
-    formField: FormField,
-    focusRing: FocusRing,
-    list: List,
-    navigation: Navigation,
-    overlay: Overlay,
-    colorScheme: {
-      light: ColorSchemeLight,
+import { Breakpoints } from "./breakpoints";
+import { Base, MantinePrimary, Neutral, Secondary, Text } from "./colors";
+import {
+  FontFamily,
+  FontFamilyMonospace,
+  FontSizes,
+  FontWeights,
+  Headings,
+  LineHeights,
+} from "./fonts";
+
+export const theme = createTheme({
+  primaryColor: "primary",
+  primaryShade: 5,
+
+  colors: {
+    primary: MantinePrimary,
+  },
+
+  white: Base.white,
+  black: Base.black,
+
+  fontFamily: FontFamily,
+  fontFamilyMonospace: FontFamilyMonospace,
+  fontSizes: FontSizes,
+  lineHeights: LineHeights,
+  fontWeights: FontWeights,
+  headings: Headings,
+  breakpoints: Breakpoints,
+  shadows: Shadows,
+
+  defaultRadius: "md",
+  focusRing: "auto",
+  cursorType: "pointer",
+  respectReducedMotion: true,
+
+  other: {  
+    colors: {
+      secondary: Secondary[50],
+      secondaryHover: Secondary[100],
+      neutralBorder: Neutral[200],
     },
-  },
-  components: {
-    badge: BadgeComponent,
-    button: ButtonComponent,
-    card: CardComponent,
-    inputtext: InputTextComponent,
-  },
-  extend: {
-    secondary: Secondary,
-    neutral: Neutral,
+    text: Text,
   },
 });

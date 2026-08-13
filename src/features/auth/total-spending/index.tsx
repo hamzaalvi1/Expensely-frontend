@@ -1,5 +1,4 @@
 import { Stack } from "../../../components/stack";
-import { Badge } from "@primereact/ui/badge";
 import { GrLineChart } from "react-icons/gr";
 import { Typography } from "../../../components/typography";
 import { useTranslation } from "react-i18next";
@@ -21,10 +20,6 @@ const TotalSpending = () => {
           {totalSpending}
         </Typography>
       </Stack>
-      <Badge severity="secondary" size="large" className="total-spending-badge">
-        <GrLineChart />
-        {t("auth.12%_increase")}
-      </Badge>
     </Stack>
   );
 };

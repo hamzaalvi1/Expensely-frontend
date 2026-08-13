@@ -1,12 +1,11 @@
 import Stack from "../../../components/stack";
-import { InputText } from "@primereact/ui/inputtext";
 
 const LoginForm = () => {
   return (
     <Stack>
       <form>
-        <InputText  placeholder="Email" /><br />
-        <InputText  placeholder="Password" />
+        <input  placeholder="Email" /><br />
+        <input  placeholder="Password" />
       </form>
     </Stack>
   );

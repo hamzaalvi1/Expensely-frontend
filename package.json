@@ -14,16 +14,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@primeicons/react": "^8.0.0",
-    "@primereact/ui": "^11.0.0",
-    "@primeuix/themes": "^3.0.0",
+    "@mantine/core": "^9.5.1",
+    "@mantine/hooks": "^9.5.1",
     "@tanstack/react-query": "^5.101.4",
     "@tanstack/react-query-devtools": "^5.101.4",
-    "chart.js": "^4.5.1",
     "clsx": "^2.1.1",
     "i18next": "^26.3.6",
     "react": "^19.2.7",
-    "react-chartjs-2": "^5.3.1",
     "react-dom": "^19.2.7",
     "react-i18next": "^17.0.11",
     "react-icons": "^5.7.0",
