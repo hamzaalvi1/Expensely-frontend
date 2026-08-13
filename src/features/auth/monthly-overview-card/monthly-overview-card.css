@@ -1,6 +1,10 @@
 .left-content-card-root {
   padding: 20px;
 }
+
+.overview-chart-loading {
+  height: 220px;
+}
 .left-content-card-root .left-content-card-body {
   padding: 0;
 }

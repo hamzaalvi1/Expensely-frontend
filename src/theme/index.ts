@@ -7,6 +7,7 @@ import { FormField, FocusRing, List, Navigation, Overlay } from "./misc";
 import { ButtonComponent } from "./components/button";
 import { BadgeComponent } from "./components/badge";
 import { CardComponent } from "./components/card";
+import { InputTextComponent } from "./components/inputtext";
 import { ColorSchemeLight } from "./color-scheme";
 
 export const Aura = definePreset(AuraTheme, {
@@ -30,6 +31,7 @@ export const Aura = definePreset(AuraTheme, {
     badge: BadgeComponent,
     button: ButtonComponent,
     card: CardComponent,
+    inputtext: InputTextComponent,
   },
   extend: {
     secondary: Secondary,

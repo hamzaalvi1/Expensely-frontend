@@ -7,7 +7,7 @@ const AuthLayout = () => {
   return (
     <Grid
       gap="none"
-      style={{ height: "100vh", gridTemplateColumns: "40% 60%" }}
+      style={{ height: "100dvh", gridTemplateColumns: "40% 60%" }}
     >
       <GridItem>
         <LeftSection />

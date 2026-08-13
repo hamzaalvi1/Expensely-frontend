@@ -1,12 +1,13 @@
 import { Card } from "@primereact/ui/card";
+import { lazy, Suspense } from "react";
 import { Stack } from "../../../components/stack";
 import { Typography } from "../../../components/typography";
 import { useTranslation } from "react-i18next";
 import { LuEllipsis } from "react-icons/lu";
-import OverviewChart from "../overview-chart";
 import TotalSpending from "../total-spending";
 import "./monthly-overview-card.css";
 
+const OverviewChart = lazy(() => import("../overview-chart"));
 
 const MonthlyOverviewCard = () => {
   const { t } = useTranslation();
@@ -20,9 +21,11 @@ const MonthlyOverviewCard = () => {
           >
             {t("auth.monthly-overview")}
           </Typography>
-          <LuEllipsis/>    
+          <LuEllipsis size={20}/>    
         </Stack>
-        <OverviewChart />
+        <Suspense fallback={<div className="overview-chart-loading" />}>
+          <OverviewChart />
+        </Suspense>
         <TotalSpending />
       </Card.Body>  
     </Card.Root>
