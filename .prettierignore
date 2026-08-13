@@ -1,0 +1,9 @@
+node_modules
+dist
+dist-ssr
+coverage
+.vite
+*.min.*
+public/icons.svg
+public/favicon.svg
+bun.lock
