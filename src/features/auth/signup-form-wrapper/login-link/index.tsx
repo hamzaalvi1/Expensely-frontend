@@ -8,7 +8,7 @@ const LoginLink = () => {
   return (
     <Text fz="xs" c="dimmed" ta="center">
       {t("auth.already-have-account")}
-    <Anchor fz="xs" component={Link} to={ROUTES_PATHS.LOGIN} mis="4px">
+    <Anchor fz="xs" component={Link} to={`/${ROUTES_PATHS.LOGIN}`} mis="4px">
       {t("auth.login")}
     </Anchor>
     </Text>

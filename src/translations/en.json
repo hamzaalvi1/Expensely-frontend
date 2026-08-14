@@ -23,6 +23,7 @@
     "signup-form-header-description": "Please enter your details to sign up.",
     "create-your-account": "Create your account",
     "already-have-account": "Already have an account?",
-    "login": "Login"
+    "login": "Login",
+    "sign-up": "Sign up"
   }
 }

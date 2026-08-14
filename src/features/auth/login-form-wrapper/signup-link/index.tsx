@@ -8,7 +8,7 @@ const SignupLink = () => {
   return (
     <Text fz="xs" c="dimmed" ta="center">
       {t("auth.dont-have-account")}
-    <Anchor fz="xs" component={Link} to={ROUTES_PATHS.REGISTER} mis="4px">
+    <Anchor fz="xs" component={Link} to={`/${ROUTES_PATHS.REGISTER}`} mis="4px">
       {t("auth.signup")}
     </Anchor>
     </Text>

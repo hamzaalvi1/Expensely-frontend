@@ -7,6 +7,9 @@ import {
 import App from "@/App";
 import { type RouteObject } from "react-router-dom";
 import { ROUTES_PATHS } from "@/constants/routes";
+import AuthLayout from "@/layouts/auth-layouts";
+import { LoginPage } from "@/pages/auth/login-page";
+import { SignupPage } from "@/pages/auth/signup-page";
 
 const { ROOT, LANGUAGE, DASHBOARD, LOGIN, REGISTER } = ROUTES_PATHS;
 
@@ -25,27 +28,15 @@ export const routeConfig: RouteObject[] = [
         children: [
           {
             loader: guestOnlyLoader,
-            lazy: async () => {
-              const { default: Component } = await import("@/layouts/auth-layouts");
-
-              return { Component };
-            },
+            Component: AuthLayout,
             children: [
               {
                 path: LOGIN,
-                lazy: async () => {
-                  const { LoginPage: Component } = await import("@/pages/auth/login-page");
-
-                  return { Component };
-                },
+                Component: LoginPage,
               },
               {
                 path: REGISTER,
-                lazy: async () => {
-                  const { SignupPage: Component } = await import("@/pages/auth/signup-page");
-
-                  return { Component };
-                },
+                Component: SignupPage,
               },
             ],
           },

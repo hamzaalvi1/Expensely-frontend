@@ -10,7 +10,7 @@ const SignupForm = () => {
         <TextInput label={t("auth.email-address")} name="email" placeholder="alex@example.com" />
         <PasswordInput label={t("auth.password")} name="password" placeholder="••••••••" />
         <PasswordInput label={t("auth.confirm-password")} name="confirm-password" placeholder="••••••••" />
-        <Button type="submit" fullWidth>
+        <Button type="submit" fullWidth mt="sm">
           {t("auth.sign-up")}
         </Button>
       </Stack>

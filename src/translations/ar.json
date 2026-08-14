@@ -23,6 +23,7 @@
     "signup-form-header-description": "يرجى إدخال تفاصيلك لتسجيل الدخول.",
     "create-your-account": "إنشاء حسابك",
     "already-have-account": "لديك حساب؟",
-    "login": "تسجيل الدخول"
+    "login": "تسجيل الدخول",
+    "sign-up": "تسجيل"
   }
 }
