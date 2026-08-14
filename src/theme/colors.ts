@@ -165,6 +165,7 @@ export const Text = {
   body: "#334155",
   muted: "#64748b",
   subtle: "#6b7280",
+  placeholder: "#bcc9c7",
   hover: "#1e293b",
   disabled: "#94a3b8",
   inverse: "#ffffff",

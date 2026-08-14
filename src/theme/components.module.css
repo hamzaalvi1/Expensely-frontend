@@ -1,0 +1,7 @@
+.textInputWrapper:not([data-error]) {
+  --input-bd: var(--app-color-neutral-border);
+}
+
+.checkboxInput:not(:checked):not([data-indeterminate]):not([data-error]) {
+  border-color: var(--app-color-neutral-border);
+}

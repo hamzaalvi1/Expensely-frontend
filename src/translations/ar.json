@@ -8,6 +8,21 @@
     "description": "تتبع الدخل والمصروفات والميزانيات والأنماط المالية من مساحة عمل منظمة واحدة.",
     "monthly-overview": "ملخص شهري",
     "total-spending": "المصروفات الإجمالية",
-    "12%_increase": "+12% ارتفاع"
+    "12%_increase": "+12% ارتفاع",
+    "welcome-back": "مرحبا بعودتك",
+    "login-form-header-description": "يرجى إدخال تفاصيلك لتسجيل الدخول.",
+    "email-address": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "sign-in": "تسجيل الدخول",
+    "remember-me": "تذكرني",
+    "forgot-password": "هل نسيت كلمة المرور؟",
+    "signup": "تسجيل",
+    "dont-have-account": "ليس لديك حساب؟",
+    "name": "الاسم",
+    "confirm-password": "تأكيد كلمة المرور",
+    "signup-form-header-description": "يرجى إدخال تفاصيلك لتسجيل الدخول.",
+    "create-your-account": "إنشاء حسابك",
+    "already-have-account": "لديك حساب؟",
+    "login": "تسجيل الدخول"
   }
 }

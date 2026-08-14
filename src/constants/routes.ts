@@ -4,4 +4,5 @@ export const ROUTES_PATHS = {
     DASHBOARD: "dashboard",
     LOGIN: "login",
     REGISTER: "register",
+    FORGOT_PASSWORD: "forgot-password",
 } as const satisfies Record<string, string>;

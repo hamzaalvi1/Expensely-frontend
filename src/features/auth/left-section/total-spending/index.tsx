@@ -6,7 +6,13 @@ import { Badge } from "@/components/badge";
 const TotalSpending = () => {
   const { t } = useTranslation();
   return (
-    <Flex justify="space-between" align="center" pt="xs">
+    <Flex
+      justify="space-between"
+      align="center"
+      pt="xs"
+      mt='xs'
+      style={{ borderTop: "1px solid var(--mantine-color-gray-2)" }}
+    >
       <Flex direction="column" gap={0}>
         <Text c="dimmed" fz="xs" lh="relaxed">
           {t("auth.total-spending")}
@@ -22,12 +28,7 @@ const TotalSpending = () => {
           />
         </Title>
       </Flex>
-      <Badge
-        tone="secondary"
-        size="lg"
-        c="primary.5"
-        leftSection={<PiChartLineUp size={16} />}
-      >
+      <Badge tone="secondary" size="lg" c="primary.5" leftSection={<PiChartLineUp size={16} />}>
         {t("auth.12%_increase")}
       </Badge>
     </Flex>

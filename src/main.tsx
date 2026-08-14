@@ -1,8 +1,10 @@
+import "./i18n";
 import { StrictMode } from "react";
+import Providers from "./components/providers";
 import { createRoot } from "react-dom/client";
 import "@mantine/core/styles.css";
-import Providers from "./components/providers";
-import "./i18n";
+import '@mantine/charts/styles.css';
+
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

@@ -8,7 +8,7 @@ import App from "@/App";
 import { type RouteObject } from "react-router-dom";
 import { ROUTES_PATHS } from "@/constants/routes";
 
-const { ROOT, LANGUAGE, DASHBOARD, LOGIN } = ROUTES_PATHS;
+const { ROOT, LANGUAGE, DASHBOARD, LOGIN, REGISTER } = ROUTES_PATHS;
 
 export const routeConfig: RouteObject[] = [
   {
@@ -34,7 +34,15 @@ export const routeConfig: RouteObject[] = [
               {
                 path: LOGIN,
                 lazy: async () => {
-                  const { Login: Component } = await import("@/pages/auth/login");
+                  const { LoginPage: Component } = await import("@/pages/auth/login-page");
+
+                  return { Component };
+                },
+              },
+              {
+                path: REGISTER,
+                lazy: async () => {
+                  const { SignupPage: Component } = await import("@/pages/auth/signup-page");
 
                   return { Component };
                 },

@@ -1,7 +1,12 @@
+import { lazy, Suspense } from "react";
 import { useTranslation } from "react-i18next";
 import { LuEllipsis } from "react-icons/lu";
 import TotalSpending from "@/features/auth/left-section/total-spending";
-import { Flex, Card,Title } from "@mantine/core";
+import { Card, Flex, Skeleton, Title } from "@mantine/core";
+
+const MonthlyOverviewChart = lazy(
+  () => import("@/features/auth/left-section/monthly-overview-chart")
+);
 
 const MonthlyOverviewCard = () => {
   const { t } = useTranslation();
@@ -14,6 +19,9 @@ const MonthlyOverviewCard = () => {
           </Title>
           <LuEllipsis size={20} />
         </Flex>
+        <Suspense fallback={<Skeleton h={250} radius="sm"/>}>
+          <MonthlyOverviewChart />
+        </Suspense>
         <TotalSpending />
       </Flex>
     </Card>
