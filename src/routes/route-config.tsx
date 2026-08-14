@@ -4,9 +4,9 @@ import {
   languageLoader,
   rootLoader,
 } from "./route-loaders";
-import App from "../App";
+import App from "@/App";
 import { type RouteObject } from "react-router-dom";
-import { ROUTES_PATHS } from "../constants/routes";
+import { ROUTES_PATHS } from "@/constants/routes";
 
 const { ROOT, LANGUAGE, DASHBOARD, LOGIN } = ROUTES_PATHS;
 
@@ -26,7 +26,7 @@ export const routeConfig: RouteObject[] = [
           {
             loader: guestOnlyLoader,
             lazy: async () => {
-              const { default: Component } = await import("../layouts/auth-layouts");
+              const { default: Component } = await import("@/layouts/auth-layouts");
 
               return { Component };
             },
@@ -34,7 +34,7 @@ export const routeConfig: RouteObject[] = [
               {
                 path: LOGIN,
                 lazy: async () => {
-                  const { Login: Component } = await import("../pages/auth/login");
+                  const { Login: Component } = await import("@/pages/auth/login");
 
                   return { Component };
                 },

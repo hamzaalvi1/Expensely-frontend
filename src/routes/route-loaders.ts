@@ -1,10 +1,10 @@
-import i18n from "../i18n";
-import { ROUTES_PATHS } from "../constants/routes";
+import i18n from "@/i18n";
+import { ROUTES_PATHS } from "@/constants/routes";
 import { replace } from "react-router-dom";
-import type { SupportedLanguage } from "../types/commons";
-import { isSupportedLanguage } from "../helpers/supported-lang";
-import { localizedPath } from "../helpers/localize-path";
-import { DEFAULT_LANGUAGE } from "../constants/lang";
+import type { SupportedLanguage } from "@/types/commons";
+import { isSupportedLanguage } from "@/helpers/supported-lang";
+import { localizedPath } from "@/helpers/localize-path";
+import { DEFAULT_LANGUAGE } from "@/constants/lang";
 
 // Temporary placeholder until authentication is connected to the API/session.
 const isAuthenticated = () => false;

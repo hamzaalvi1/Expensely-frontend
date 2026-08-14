@@ -1,5 +1,5 @@
-import { LANGUAGES } from "../constants/lang";
-import type { SupportedLanguage } from "../types/commons";
+import { LANGUAGES } from "@/constants/lang";
+import type { SupportedLanguage } from "@/types/commons";
 
 export const supportedLanguages = Object.values(LANGUAGES);
 

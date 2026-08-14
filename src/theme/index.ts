@@ -2,12 +2,17 @@ import { createTheme } from "@mantine/core";
 import { Shadows } from "./shadows";
 import { Spacing } from "./spacing";
 import { Radius } from "./radius";
+import { Components } from "./components";
 
 import { Breakpoints } from "./breakpoints";
 import {
   Base,
+  MantineDanger,
+  MantineInfo,
   MantinePrimary,
   MantineSecondary,
+  MantineSuccess,
+  MantineWarning,
   Neutral,
   Secondary,
   Text,
@@ -28,6 +33,10 @@ export const theme = createTheme({
   colors: {
     primary: MantinePrimary,
     secondary: MantineSecondary,
+    success: MantineSuccess,
+    info: MantineInfo,
+    warning: MantineWarning,
+    danger: MantineDanger,
   },
 
   white: Base.white,
@@ -43,6 +52,7 @@ export const theme = createTheme({
   shadows: Shadows,
   spacing: Spacing,
   radius: Radius,
+  components: Components,
 
   defaultRadius: "sm",
   focusRing: "auto",

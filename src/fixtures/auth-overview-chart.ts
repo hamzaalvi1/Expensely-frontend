@@ -1,4 +1,4 @@
-import { Primary, Secondary } from "../theme/colors";
+import { Primary, Secondary } from "@/theme/colors";
 
 export const monthlyOverviewChartData = {
     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],

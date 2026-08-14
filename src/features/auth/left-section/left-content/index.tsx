@@ -1,6 +1,6 @@
 import { Title, Text, Flex } from "@mantine/core";
 import { useTranslation } from "react-i18next";
-import MonthlyOverviewCard from "../monthly-overview-card";
+import MonthlyOverviewCard from "@/features/auth/left-section/monthly-overview-card";
 
 const LeftContent = () => {
   const { t } = useTranslation();

@@ -1,20 +1,21 @@
-import Logo from "../../../components/logo";
-import LeftContent from "../left-content";
-import { Box, Flex } from "@mantine/core";
+import Logo from "@/components/logo";
+import LeftContent from "./left-content";
+import { Flex } from "@mantine/core";
 
 const LeftSection = () => {
   return (
-    <Box
+    <Flex
       h={"100%"}
       p="xl"
       bg="secondary.0"
+      direction="column"
       style={{ borderRight: "1px solid var(--app-color-neutral-border)" }}
     >
       <Logo />
-      <Flex h={"100%"} w={"100%"} justify={"center"} align={"center"} direction={"column"}>
+      <Flex flex={1} w="100%" justify="center" align="center" direction="column">
         <LeftContent />
       </Flex>
-    </Box>
+    </Flex>
   );
 };
 

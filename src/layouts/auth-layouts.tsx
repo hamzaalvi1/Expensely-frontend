@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import LeftSection from "../features/auth/left-section";
+import LeftSection from "@/features/auth/left-section";
 import { Grid } from "@mantine/core";
 
 const AuthLayout = () => {
