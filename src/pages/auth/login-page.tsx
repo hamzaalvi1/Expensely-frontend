@@ -1,5 +1,7 @@
 import LoginFormWrapper from "@/features/auth/login-form-wrapper";
 
-export const LoginPage = () => {
+const LoginPage = () => {
   return <LoginFormWrapper />;
 };
+
+export default LoginPage;
