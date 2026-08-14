@@ -1,19 +1,7 @@
-import { Badge as MantineBadge, type BadgeProps as MantineBadgeProps } from "@mantine/core";
+import { Badge as MantineBadge } from "@mantine/core";
+import type { BadgeProps, BadgeToneMap } from "./types";
 
-export type BadgeTone =
-  | "primary"
-  | "secondary"
-  | "success"
-  | "info"
-  | "warning"
-  | "danger";
-
-export interface BadgeProps
-  extends Omit<MantineBadgeProps, "color"> {
-  tone?: BadgeTone;
-}
-
-const filledColors: Record<BadgeTone, string> = {
+const badgeColors: Record<keyof BadgeToneMap, string> = {
   primary: "primary.5",
   secondary: "secondary.0",
   success: "success.5",
@@ -29,11 +17,7 @@ export const Badge = ({
 }: BadgeProps) => (
   <MantineBadge
     {...props}
-    color={
-      tone === "secondary" && props.variant !== undefined && props.variant !== "filled"
-        ? "secondary.5"
-        : filledColors[tone]
-    }
+    color={badgeColors[tone]}
     autoContrast={autoContrast}
   />
 );

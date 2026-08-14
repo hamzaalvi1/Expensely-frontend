@@ -1,13 +1,13 @@
-import Stack from "@/components/stack";
+import { Flex } from "@mantine/core"
 
 const LoginForm = () => {
   return (
-    <Stack>
+    <Flex direction="column" gap="md">
       <form>
         <input  placeholder="Email" /><br />
         <input  placeholder="Password" />
       </form>
-    </Stack>
+    </Flex>
   );
 };
 
