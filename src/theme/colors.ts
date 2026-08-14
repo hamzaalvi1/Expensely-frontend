@@ -29,7 +29,28 @@ export const MantinePrimary = [
 export const Secondary = {
   50: "#F1F3FF",
   100: "#E1E8FD",
+  200: "#C9D4F8",
+  300: "#A6B9F0",
+  400: "#7E98E5",
+  500: "#5778D5",
+  600: "#3F5FC2",
+  700: "#3049A3",
+  800: "#273C82",
+  900: "#24336A",
 } as const;
+
+export const MantineSecondary = [
+  Secondary[50],
+  Secondary[100],
+  Secondary[200],
+  Secondary[300],
+  Secondary[400],
+  Secondary[500],
+  Secondary[600],
+  Secondary[700],
+  Secondary[800],
+  Secondary[900],
+] as const;
 
 export const Neutral = {
   200: "#E5E7EB",

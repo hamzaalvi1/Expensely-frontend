@@ -1,16 +1,20 @@
 import Logo from "../../../components/logo";
-import { Stack } from "../../../components/stack";
 import LeftContent from "../left-content";
-import "./left-section.css";
+import { Box, Flex } from "@mantine/core";
 
 const LeftSection = () => {
   return (
-    <Stack className="login-sidebar">
+    <Box
+      h={"100%"}
+      p="xl"
+      bg="secondary.0"
+      style={{ borderRight: "1px solid var(--app-color-neutral-border)" }}
+    >
       <Logo />
-      <Stack className="left-content-container">
+      <Flex h={"100%"} w={"100%"} justify={"center"} align={"center"} direction={"column"}>
         <LeftContent />
-      </Stack>
-    </Stack>
+      </Flex>
+    </Box>
   );
 };
 

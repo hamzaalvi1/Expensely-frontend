@@ -3,8 +3,8 @@ import type { SVGProps } from "react";
 export function LogoIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
-      width="18"
-      height="18"
+      width="22"
+      height="22"
       viewBox="0 0 19 18"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

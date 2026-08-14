@@ -1,30 +1,21 @@
-import Stack from "../stack";
-import { Typography } from "../typography";
 import { LogoIcon } from "./logo-icon";
-import { clsx } from "clsx";
-import "./logo.css";
+import { Flex, Title,Text } from "@mantine/core";
 
-const Logo = ({ className }: { className?: string }) => {
+const Logo = ({ className = "" }: { className?: string }) => {
   return (
-    <Stack direction="row" align="center" className={clsx("logo", className)}>
-      <Stack className="logo-container">
+    <Flex direction="row" align="center" gap="xs" className={className}>
+      <Flex w={40} h={40} bg="primary.5" bdrs="sm" align="center" justify="center">
         <LogoIcon color="white" />
-      </Stack>
-      <Stack className="logo-text-container" gap="none">
-        <Typography
-          color="primary"
-          as="h3"
-          variant="h4"
-          weight={700}
-          style={{ color: "var(--p-primary-500)" }}
-        >
+      </Flex>
+      <Flex direction="column" gap={0}>
+        <Title order={3} fz="h4">
           Expensely
-        </Typography>
-        <Typography color="gray" as="span" style={{ fontSize: 12 }}>
+        </Title>
+        <Text c="dimmed" fz="xs" lh="relaxed">
           Premium Finance
-        </Typography>
-      </Stack>
-    </Stack>
+        </Text>
+      </Flex>
+    </Flex>
   );
 };
 

@@ -1,29 +1,19 @@
-import { Stack } from "../../../components/stack";
-import { Typography } from "../../../components/typography";
+import { Title, Text, Flex } from "@mantine/core";
 import { useTranslation } from "react-i18next";
 import MonthlyOverviewCard from "../monthly-overview-card";
 
 const LeftContent = () => {
   const { t } = useTranslation();
   return (
-    <Stack gap="lg">
-      <Typography
-        color="secondary"
-        variant="h4"
-        style={{
-          letterSpacing: "-0.64px",
-          lineHeight: "36px",
-          fontWeight: 700,
-          fontSize: "32px",
-        }}
-      >
+    <Flex gap="md" direction={'column'}>
+      <Title order={4} fz="4xl" lh="heading" lts={"-0.64px"}>
         {t("auth.title")}
-      </Typography>
-      <Typography color="gray" as="h6" style={{ fontSize: 14 }}>
+      </Title>
+      <Text c="dimmed" fz="sm" lh="relaxed" textWrap="pretty">
         {t("auth.description")}
-      </Typography>
+      </Text>
       <MonthlyOverviewCard />
-    </Stack>
+    </Flex>
   );
 };
 

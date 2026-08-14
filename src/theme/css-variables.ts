@@ -4,6 +4,7 @@ export const cssVariablesResolver: CSSVariablesResolver = (theme) => ({
   variables: {
     "--mantine-color-body": theme.other.colors.secondary,
     "--mantine-color-text": theme.other.text.body,
+    "--mantine-color-dimmed": theme.other.text.subtle,
     "--app-color-secondary": theme.other.colors.secondary,
     "--app-color-secondary-hover": theme.other.colors.secondaryHover,
     "--app-color-neutral-border": theme.other.colors.neutralBorder,

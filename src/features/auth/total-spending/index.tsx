@@ -1,5 +1,4 @@
 import { Stack } from "../../../components/stack";
-import { GrLineChart } from "react-icons/gr";
 import { Typography } from "../../../components/typography";
 import { useTranslation } from "react-i18next";
 import "./total-spending.css";
