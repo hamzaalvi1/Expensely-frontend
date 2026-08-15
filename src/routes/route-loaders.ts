@@ -46,13 +46,15 @@ export const languageLoader = async ({
   params: { lang?: SupportedLanguage };
 }) => {
   const { lang } = params;
-  if(lang === undefined) {
-    await i18n.changeLanguage(DEFAULT_LANGUAGE);
-    return null; 
-  }
-  if (!isSupportedLanguage(lang)) {
+  const language = lang ?? DEFAULT_LANGUAGE;
+
+  if (!isSupportedLanguage(language)) {
     throw new Response("Language not found", { status: 404 });
   }
-  await i18n.changeLanguage(lang);
+
+  await i18n.changeLanguage(language);
+  document.documentElement.lang = language;
+  document.documentElement.dir = i18n.dir(language);
+
   return null;
 };
