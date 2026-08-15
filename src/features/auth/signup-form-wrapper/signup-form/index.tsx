@@ -1,17 +1,43 @@
-import { useTranslation } from "react-i18next";
-import { Stack, TextInput, PasswordInput, Button } from "@mantine/core";
+import { useTranslation } from 'react-i18next';
+import { Stack, TextInput, PasswordInput, Button } from '@mantine/core';
+import useSignupFormController from './use-signup-form';
+import { signupFields } from '@/constants/form-fields';
+
+const { NAME, EMAIL, PASSWORD, CONFIRM_PASSWORD } = signupFields;
 
 const SignupForm = () => {
   const { t } = useTranslation();
+  const { formKey, getInputProps, handleSignup, handleFormSubmit } =
+    useSignupFormController();
   return (
-    <form>
+    <form onSubmit={handleFormSubmit(handleSignup)}>
       <Stack gap="xs">
-        <TextInput label={t("auth.name")} name="name" placeholder="John Doe" />
-        <TextInput label={t("auth.email-address")} name="email" placeholder="alex@example.com" />
-        <PasswordInput label={t("auth.password")} name="password" placeholder="••••••••" />
-        <PasswordInput label={t("auth.confirm-password")} name="confirm-password" placeholder="••••••••" />
+        <TextInput
+          key={formKey(NAME)}
+          label={t('auth.name')}
+          placeholder="John Doe"
+          {...getInputProps(NAME)}
+        />
+        <TextInput
+          key={formKey(EMAIL)}
+          label={t('auth.email-address')}
+          placeholder="alex@example.com"
+          {...getInputProps(EMAIL)}
+        />
+        <PasswordInput
+          key={formKey(PASSWORD)}
+          label={t('auth.password')}
+          placeholder="••••••••"
+          {...getInputProps(PASSWORD)}
+        />
+        <PasswordInput
+          key={formKey(CONFIRM_PASSWORD)}
+          label={t('auth.confirm-password')}
+          placeholder="••••••••"
+          {...getInputProps(CONFIRM_PASSWORD)}
+        />
         <Button type="submit" fullWidth mt="sm">
-          {t("auth.sign-up")}
+          {t('auth.sign-up')}
         </Button>
       </Stack>
     </form>

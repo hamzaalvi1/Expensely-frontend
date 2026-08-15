@@ -24,6 +24,12 @@
     "create-your-account": "إنشاء حسابك",
     "already-have-account": "لديك حساب؟",
     "login": "تسجيل الدخول",
-    "sign-up": "تسجيل"
+    "sign-up": "تسجيل",
+    "email-required": "البريد الإلكتروني مطلوب",
+    "invalid-email": "البريد الإلكتروني غير صالح",
+    "password-required": "كلمة المرور مطلوبة",
+    "name-required": "الاسم مطلوب",
+    "confirm-password-required": "تأكيد كلمة المرور مطلوب",
+    "passwords-do-not-match": "كلمات المرور غير متطابقة"
   }
 }
