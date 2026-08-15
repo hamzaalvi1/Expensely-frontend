@@ -11,7 +11,8 @@
     "build": "tsc -b && vite build",
     "start": "vite preview",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "generate:icons": "svgr --out-dir src/assets/icons --ext tsx src/assets/svg-source"
   },
   "dependencies": {
     "@mantine/charts": "^9.5.1",
@@ -30,6 +31,7 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
+    "@svgr/cli": "^8.1.0",
     "@tanstack/eslint-plugin-query": "^5.101.4",
     "@types/node": "^24.13.2",
     "@types/react": "^19.2.17",

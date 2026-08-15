@@ -1,0 +1,27 @@
+{
+  "typescript": true,
+  "jsxRuntime": "automatic",
+  "icon": true,
+  "memo": true,
+  "svgo": true,
+  "svgoConfig": {
+    "multipass": true,
+    "plugins": [
+      {
+        "name": "preset-default",
+        "params": {
+          "overrides": {
+            "removeViewBox": false
+          }
+        }
+      }
+    ]
+  },
+  "expandProps": "end",
+  "minify": true,
+  "replaceAttrValues": {
+    "#000": "currentColor",
+    "#000000": "currentColor",
+    "#1E1E1E": "currentColor"
+  }
+}
