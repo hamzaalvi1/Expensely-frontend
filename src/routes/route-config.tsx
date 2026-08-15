@@ -1,14 +1,14 @@
+import App from "@/App";
+import AuthLayout from "@/layouts/auth-layouts";
+import { lazyRoute } from "./route-helpers";
+import { ROUTES_PATHS } from "@/constants/routes";
 import {
   authenticatedOnlyLoader,
   guestOnlyLoader,
   languageLoader,
   rootLoader,
 } from "./route-loaders";
-import App from "@/App";
 import { type RouteObject } from "react-router-dom";
-import { ROUTES_PATHS } from "@/constants/routes";
-import AuthLayout from "@/layouts/auth-layouts";
-import { lazyRoute } from "./route-helpers";
 
 const { ROOT, LANGUAGE, DASHBOARD, LOGIN, REGISTER } = ROUTES_PATHS;
 
