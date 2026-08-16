@@ -31,5 +31,11 @@
     "name-required": "Name is required",
     "confirm-password-required": "Confirm password is required",
     "passwords-do-not-match": "Passwords do not match"
+  },
+  "dashboard": {
+    "application": "Application",
+    "settings": "Settings",
+    "logout": "Logout",
+    "delete-my-account": "Delete my account"
   }
 }

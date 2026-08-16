@@ -29,7 +29,7 @@ export const MantinePrimary = [
 export const Secondary = {
   50: "#F1F3FF",
   100: "#E1E8FD",
-  200: "#C9D4F8",
+  200: "#3D4948",
   300: "#A6B9F0",
   400: "#7E98E5",
   500: "#5778D5",

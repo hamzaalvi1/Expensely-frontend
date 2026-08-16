@@ -1,10 +1,14 @@
-import type { LazyModule } from "./types";
-import type { RouteObject } from "react-router-dom";
+import type { LazyModule, LazyRouteType } from './types';
+import type { RouteObject } from 'react-router-dom';
 
-const pageModules = import.meta.glob<LazyModule>("/src/pages/**/*.tsx");
+const pageModules = import.meta.glob<LazyModule>('/src/pages/**/*.tsx');
 
-export const lazyRoute = (path: string, importPath: string): RouteObject => ({
-  path,
+export const lazyRoute = (
+  path: string,
+  importPath: string,
+  { index = false }: LazyRouteType = {},
+): RouteObject => ({
+  ...(index ? { index: true } : { path }),
   lazy: async () => {
     const load = pageModules[importPath];
 

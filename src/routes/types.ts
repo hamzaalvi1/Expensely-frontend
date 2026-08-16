@@ -1,5 +1,9 @@
-import type { ComponentType } from "react";
+import type { ComponentType } from 'react';
 
 export type LazyModule = {
-    default: ComponentType;
-  };
+  default: ComponentType;
+};
+
+export type LazyRouteType = {
+  index?: boolean;
+};

@@ -31,5 +31,11 @@
     "name-required": "الاسم مطلوب",
     "confirm-password-required": "تأكيد كلمة المرور مطلوب",
     "passwords-do-not-match": "كلمات المرور غير متطابقة"
+  },
+  "dashboard": {
+    "application": "التطبيق",
+    "settings": "الإعدادات",
+    "logout": "تسجيل الخروج",
+    "delete-my-account": "حذف حسابي"
   }
 }
