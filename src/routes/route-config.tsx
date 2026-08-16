@@ -1,5 +1,5 @@
   import App from "@/App";
-  import AuthLayout from "@/layouts/auth-layout";
+  import AuthLayout from "@/layouts/auth";
   import { lazyRoute } from "./route-helpers";
   import { ROUTES_PATHS } from "@/constants/routes";
   import {
@@ -9,7 +9,7 @@
     rootLoader,
   } from "./route-loaders";
   import { type RouteObject } from "react-router-dom";
-  import DashboardLayout from "@/layouts/dashboard-layout";
+  import DashboardLayout from "@/layouts/dashboard";
 
   const { ROOT, LANGUAGE, DASHBOARD, LOGIN, REGISTER } = ROUTES_PATHS;
 

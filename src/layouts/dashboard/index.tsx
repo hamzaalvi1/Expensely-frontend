@@ -1,7 +1,7 @@
 import type { CSSProperties } from 'react';
-import { Outlet } from 'react-router-dom';
 import { AppShell } from '@mantine/core';
-import DashboardHeader from '@/features/dashboard/layout/dashboard-header';
+import DashboardHeader from '@/layouts/dashboard/dashboard-header';
+import DashboardMain from '@/layouts/dashboard/dashboard-main';
 
 const appShellStyles = {
   '--app-shell-border-color': 'var(--app-color-neutral-border)',
@@ -22,7 +22,7 @@ const DashboardLayout = () => {
         Test
       </AppShell.Navbar>
       <AppShell.Main>
-        <Outlet />
+        <DashboardMain />
       </AppShell.Main>
     </AppShell>
   );
