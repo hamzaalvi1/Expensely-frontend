@@ -30,7 +30,14 @@ const AvatarMenuBar = () => {
       styles={{ dropdown: { padding: '5px', width: 200 } }}
     >
       <Menu.Target>
-        <Avatar color="primary.5" radius="xl" style={{ cursor: 'pointer' }}>
+        <Avatar
+          color="primary.5"
+          variant="filled"
+          styles={{
+            root: { cursor: 'pointer' },
+            placeholder: { fontWeight: 600 },
+          }}
+        >
           HA
         </Avatar>
       </Menu.Target>

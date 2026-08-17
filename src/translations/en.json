@@ -34,6 +34,13 @@
   },
   "dashboard": {
     "application": "Application",
+    "navigation": {
+      "dashboard": "Dashboard",
+      "transactions": "Transactions",
+      "categories": "Categories",
+      "budgets": "Budgets",
+      "ai-insights": "AI Insights"
+    },
     "settings": "Settings",
     "logout": "Logout",
     "delete-my-account": "Delete my account"

@@ -34,6 +34,13 @@
   },
   "dashboard": {
     "application": "التطبيق",
+    "navigation": {
+      "dashboard": "لوحة التحكم",
+      "transactions": "المعاملات",
+      "categories": "الفئات",
+      "budgets": "الميزانيات",
+      "ai-insights": "رؤى الذكاء الاصطناعي"
+    },
     "settings": "الإعدادات",
     "logout": "تسجيل الخروج",
     "delete-my-account": "حذف حسابي"

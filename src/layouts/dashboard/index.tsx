@@ -1,13 +1,12 @@
-import type { CSSProperties } from 'react';
 import { AppShell } from '@mantine/core';
 import DashboardHeader from '@/layouts/dashboard/dashboard-header';
 import DashboardMain from '@/layouts/dashboard/dashboard-main';
-// import DashboardSidebar from '@/layouts/dashboard/dashboard-sidebar';
+import DashboardSidebar from '@/layouts/dashboard/dashboard-sidebar';
 import Logo from '@/components/logo';
 
 const appShellStyles = {
   '--app-shell-border-color': 'var(--app-color-neutral-border)',
-} as CSSProperties;
+}
 
 const DashboardLayout = () => {
   return (
@@ -20,11 +19,13 @@ const DashboardLayout = () => {
       <AppShell.Header>
         <DashboardHeader />
       </AppShell.Header>
-      <AppShell.Navbar p="md" visibleFrom="sm">
-        <AppShell.Section>
+      <AppShell.Navbar p={0} visibleFrom="sm">
+        <AppShell.Section p="md">
           <Logo />
         </AppShell.Section>
-        {/* <DashboardSidebar /> */}
+        <AppShell.Section grow>
+          <DashboardSidebar />
+        </AppShell.Section>
       </AppShell.Navbar>
       <AppShell.Main>
         <DashboardMain />

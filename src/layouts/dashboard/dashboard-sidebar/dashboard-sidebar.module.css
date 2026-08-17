@@ -1,0 +1,23 @@
+.navLink.navLink {
+  min-height: 45px;
+  padding-inline-start: var(--mantine-spacing-lg);
+  padding-inline-end: var(--mantine-spacing-lg);
+  color: var(--mantine-color-dimmed);
+}
+
+.navLink.navLink:hover,
+.navLink.navLink[data-active] {
+  color: var(--mantine-color-primary-5);
+  background-color: var(--mantine-color-secondary-0);
+}
+
+.navLinkSection[data-position='left'] {
+  margin-inline-end: var(--mantine-spacing-sm);
+}
+
+.navLinkLabel {
+  font-size: var(--mantine-font-size-sm);
+  font-weight: var(--mantine-font-weight-medium);
+  line-height: var(--mantine-line-height-lg);
+  letter-spacing: 0;
+}
