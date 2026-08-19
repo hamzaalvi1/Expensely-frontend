@@ -35,7 +35,7 @@
   "dashboard": {
     "application": "التطبيق",
     "navigation": {
-      "dashboard": "لوحة التحكم",
+      "overview": "ملخص",
       "transactions": "المعاملات",
       "categories": "الفئات",
       "budgets": "الميزانيات",

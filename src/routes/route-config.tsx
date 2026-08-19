@@ -11,7 +11,17 @@ import {
 import { type RouteObject } from 'react-router-dom';
 import DashboardLayout from '@/layouts/dashboard';
 
-const { ROOT, LANGUAGE, DASHBOARD, LOGIN, REGISTER } = ROUTES_PATHS;
+const {
+  ROOT,
+  LANGUAGE,
+  DASHBOARD,
+  LOGIN,
+  REGISTER,
+  TRANSACTIONS,
+  CATEGORIES,
+  BUDGETS,
+  AI_INSIGHTS,
+} = ROUTES_PATHS;
 
 export const routeConfig: RouteObject[] = [
   {
@@ -35,13 +45,20 @@ export const routeConfig: RouteObject[] = [
             ],
           },
           {
-            path: DASHBOARD,
             loader: authenticatedOnlyLoader,
             Component: DashboardLayout,
             children: [
-              lazyRoute(DASHBOARD, '/src/pages/dashboard/dashboard-page.tsx', {
-                index: true,
-              }),
+              lazyRoute(DASHBOARD, '/src/pages/dashboard/dashboard-page.tsx'),
+              lazyRoute(
+                TRANSACTIONS,
+                '/src/pages/dashboard/transaction-page.tsx',
+              ),
+              lazyRoute(CATEGORIES, '/src/pages/dashboard/categories-page.tsx'),
+              lazyRoute(BUDGETS, '/src/pages/dashboard/budget-page.tsx'),
+              lazyRoute(
+                AI_INSIGHTS,
+                '/src/pages/dashboard/ai-insight-page.tsx',
+              ),
             ],
           },
         ],

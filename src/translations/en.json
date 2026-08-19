@@ -35,7 +35,7 @@
   "dashboard": {
     "application": "Application",
     "navigation": {
-      "dashboard": "Dashboard",
+      "overview": "Overview",
       "transactions": "Transactions",
       "categories": "Categories",
       "budgets": "Budgets",
