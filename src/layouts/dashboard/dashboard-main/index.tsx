@@ -3,7 +3,7 @@ import { Flex } from '@mantine/core';
 const DashboardMain = () => {
   return (
     <Flex
-      p="md"
+      p="lg"
       w="100%"
       bg={'secondary.3'}
       direction="column"

@@ -34,6 +34,8 @@
   },
   "dashboard": {
     "application": "التطبيق",
+    "title": "لوحة التحكم",
+    "description": "ملخص واضح للدخل والمصروفات والميزانيات الشهرية.",
     "navigation": {
       "overview": "ملخص",
       "transactions": "المعاملات",

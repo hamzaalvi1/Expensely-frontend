@@ -34,6 +34,8 @@
   },
   "dashboard": {
     "application": "Application",
+    "title": "Dashboard",
+    "description": "A clear overview of your income, spending and monthly progress.",
     "navigation": {
       "overview": "Overview",
       "transactions": "Transactions",
