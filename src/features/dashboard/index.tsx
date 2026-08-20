@@ -1,7 +1,8 @@
-import { Card, Group, Stack, Text } from '@mantine/core';
+import { Stack } from '@mantine/core';
 import HeadingSection from '@/components/heading-section';
 import { SimpleGrid } from '@mantine/core';
-
+import SummaryCard from './summary-card';
+import { summaryCardConfig } from './summary-card/summary-card-config';
 const Dashboard = () => {
   return (
     <Stack gap="md">
@@ -10,26 +11,9 @@ const Dashboard = () => {
         description="dashboard.description"
       />
       <SimpleGrid cols={4} spacing="sm">
-      <Card withBorder>
-        <Text >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-        </Text>
-      </Card>
-      <Card withBorder>
-        <Text >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-        </Text>
-      </Card>
-      <Card withBorder>
-        <Text >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-        </Text>
-      </Card>
-      <Card withBorder>
-        <Text >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-        </Text>
-      </Card>
+        {summaryCardConfig.map(item => (
+          <SummaryCard key={item.title} {...item} />
+        ))}
       </SimpleGrid>
     </Stack>
   );
