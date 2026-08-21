@@ -64,6 +64,7 @@ export const theme = createTheme({
       secondary: Secondary[50],
       secondaryHover: Secondary[100],
       neutralBorder: Neutral[200],
+      iconSurface: "#E9EDFF",
     },
     text: Text,
   },

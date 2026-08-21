@@ -1,9 +1,11 @@
-import { Stack } from '@mantine/core';
-import HeadingSection from '@/components/heading-section';
-import { SimpleGrid } from '@mantine/core';
 import SummaryCard from './summary-card';
-import { summaryCardConfig } from './summary-card/summary-card-config';
+import { Stack,SimpleGrid } from '@mantine/core';
+import HeadingSection from '@/components/heading-section';
+import { useSummaryCardConfig } from './summary-card/use-summary-card-config';
+
 const Dashboard = () => {
+  const summaryCardConfig = useSummaryCardConfig();
+
   return (
     <Stack gap="md">
       <HeadingSection

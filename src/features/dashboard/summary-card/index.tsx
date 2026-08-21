@@ -1,4 +1,4 @@
-import { Card, Text, Title, NumberFormatter, Stack } from '@mantine/core';
+import { Box, Card, Text, Title, NumberFormatter, Stack } from '@mantine/core';
 import type { SummaryCardProps } from './types';
 
 const SummaryCard = ({
@@ -14,12 +14,10 @@ const SummaryCard = ({
     <Card withBorder p="lg" bdrs="md" {...containerProps}>
       <Stack gap="xs">
         <Text
-          size="sm"
+          fz="sm"
           lh="1.2"
-          fw="regular"
-          lts="0.6px"
+          fw="semibold"
           c="dimmed"
-          tt="uppercase"
           {...titleProps}
         >
           {title}
@@ -42,7 +40,11 @@ const SummaryCard = ({
             {...formatter}
           />
         </Title>
-        {subContent}
+        {subContent && (
+          <Box mt={5} mih={26} display="flex" style={{ alignItems: 'center' }}>
+            {subContent}
+          </Box>
+        )}
       </Stack>
     </Card>
   );

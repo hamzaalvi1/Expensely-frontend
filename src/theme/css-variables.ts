@@ -9,6 +9,7 @@ export const cssVariablesResolver: CSSVariablesResolver = (theme) => ({
     "--app-color-secondary": theme.other.colors.secondary,
     "--app-color-secondary-hover": theme.other.colors.secondaryHover,
     "--app-color-neutral-border": theme.other.colors.neutralBorder,
+    "--app-color-icon-surface": theme.other.colors.iconSurface,
     "--app-color-text-primary": theme.other.text.primary,
     "--app-color-text-body": theme.other.text.body,
     "--app-color-text-muted": theme.other.text.muted,

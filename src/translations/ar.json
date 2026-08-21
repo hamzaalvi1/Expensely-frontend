@@ -43,6 +43,15 @@
       "budgets": "الميزانيات",
       "ai-insights": "رؤى الذكاء الاصطناعي"
     },
+    "summary-card": {
+      "from-last-month": "من الشهر الماضي",
+      "current-balance": "الرصيد الحالي",
+      "monthly-income": "الدخل الشهري",
+      "monthly-expenses": "المصروفات الشهرية",
+      "incoming": "وارد",
+      "outgoing": "صادر",
+      "total-savings": "المدخرات الإجمالية"
+    },
     "settings": "الإعدادات",
     "logout": "تسجيل الخروج",
     "delete-my-account": "حذف حسابي"

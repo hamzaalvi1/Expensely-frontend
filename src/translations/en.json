@@ -43,6 +43,15 @@
       "budgets": "Budgets",
       "ai-insights": "AI Insights"
     },
+    "summary-card": {
+      "from-last-month": "From last month",
+      "current-balance": "Current Balance",
+      "monthly-income": "Monthly Income",
+      "monthly-expenses": "Monthly Expenses",
+      "incoming": "Incoming",
+      "outgoing": "Outgoing",
+      "total-savings": "Total Savings"
+    },
     "settings": "Settings",
     "logout": "Logout",
     "delete-my-account": "Delete my account"
