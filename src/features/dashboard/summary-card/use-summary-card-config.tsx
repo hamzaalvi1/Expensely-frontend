@@ -1,8 +1,8 @@
-import { Text } from '@mantine/core';
 import { useTranslation } from 'react-i18next';
 
 import DirectionLabel from '../direction-label';
 import GrowthIndicator from '../growth-indicator';
+import GoalProgressBar from '../goal-progress-bar';
 
 import { ARROW_DIRECTION } from '@/constants/arrow-direction';
 import type { SummaryCardConfig } from './types';
@@ -15,7 +15,7 @@ export const useSummaryCardConfig = (): SummaryCardConfig[] => {
   return [
     {
       title: t('dashboard.summary-card.current-balance'),
-      amount: '100',
+      amount: '1490',
       amountProps: {
         c: 'primary.4',
       },
@@ -23,7 +23,7 @@ export const useSummaryCardConfig = (): SummaryCardConfig[] => {
     },
     {
       title: t('dashboard.summary-card.monthly-income'),
-      amount: '142600.22',
+      amount: '230.22',
       subContent: (
         <DirectionLabel
           title={t('dashboard.summary-card.incoming')}
@@ -35,7 +35,7 @@ export const useSummaryCardConfig = (): SummaryCardConfig[] => {
     },
     {
       title: t('dashboard.summary-card.monthly-expenses'),
-      amount: '100',
+      amount: '233.2',
       subContent: (
         <DirectionLabel
           title={t('dashboard.summary-card.outgoing')}
@@ -48,7 +48,7 @@ export const useSummaryCardConfig = (): SummaryCardConfig[] => {
     {
       title: t('dashboard.summary-card.total-savings'),
       amount: '100',
-      subContent: <Text>Hello</Text>,
+      subContent: <GoalProgressBar progressValue={50} />,
     },
   ];
 };

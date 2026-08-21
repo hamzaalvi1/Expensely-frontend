@@ -50,7 +50,8 @@
       "monthly-expenses": "Monthly Expenses",
       "incoming": "Incoming",
       "outgoing": "Outgoing",
-      "total-savings": "Total Savings"
+      "total-savings": "Total Savings",
+      "goal-progress": "Goal Progress"
     },
     "settings": "Settings",
     "logout": "Logout",

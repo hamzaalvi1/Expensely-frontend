@@ -1,5 +1,5 @@
 import SummaryCard from './summary-card';
-import { Stack,SimpleGrid } from '@mantine/core';
+import { Stack, SimpleGrid, Grid, Card, Text } from '@mantine/core';
 import HeadingSection from '@/components/heading-section';
 import { useSummaryCardConfig } from './summary-card/use-summary-card-config';
 
@@ -12,11 +12,23 @@ const Dashboard = () => {
         title="dashboard.title"
         description="dashboard.description"
       />
-      <SimpleGrid cols={4} spacing="sm">
+      <SimpleGrid cols={{ base: 1, md: 4 }} spacing="sm">
         {summaryCardConfig.map(item => (
           <SummaryCard key={item.title} {...item} />
         ))}
       </SimpleGrid>
+      <Grid gap={{ base: 'sm', md: 'md' }}>
+        <Grid.Col span={{ base: 12, md: 7 }}>
+          <Card withBorder p="lg" bdrs="md">
+            <Text>Hello</Text>
+          </Card>
+        </Grid.Col>
+        <Grid.Col span={{ base: 12, md: 5 }}>
+          <Card withBorder p="lg" bdrs="md">
+            <Text>Hello</Text>
+          </Card>
+        </Grid.Col>
+      </Grid>
     </Stack>
   );
 };

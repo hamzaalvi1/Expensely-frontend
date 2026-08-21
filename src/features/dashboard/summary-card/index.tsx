@@ -11,7 +11,7 @@ const SummaryCard = ({
   containerProps,
 }: SummaryCardProps) => {
   return (
-    <Card withBorder p="lg" bdrs="md" {...containerProps}>
+    <Card withBorder p="lg" bdrs="md"{...containerProps} >
       <Stack gap="xs">
         <Text
           fz="sm"

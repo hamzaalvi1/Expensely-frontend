@@ -50,7 +50,8 @@
       "monthly-expenses": "المصروفات الشهرية",
       "incoming": "وارد",
       "outgoing": "صادر",
-      "total-savings": "المدخرات الإجمالية"
+      "total-savings": "المدخرات الإجمالية",
+      "goal-progress": "تقدم الهدف"
     },
     "settings": "الإعدادات",
     "logout": "تسجيل الخروج",
