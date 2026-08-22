@@ -53,6 +53,9 @@
       "total-savings": "Total Savings",
       "goal-progress": "Goal Progress"
     },
+    "income-expense-chart": {
+      "title": "Income vs Expenses"
+    },
     "settings": "Settings",
     "logout": "Logout",
     "delete-my-account": "Delete my account"

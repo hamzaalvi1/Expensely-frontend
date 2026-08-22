@@ -53,6 +53,9 @@
       "total-savings": "المدخرات الإجمالية",
       "goal-progress": "تقدم الهدف"
     },
+    "income-expense-chart": {
+      "title": "الدخل vs المصروفات"
+    },
     "settings": "الإعدادات",
     "logout": "تسجيل الخروج",
     "delete-my-account": "حذف حسابي"
