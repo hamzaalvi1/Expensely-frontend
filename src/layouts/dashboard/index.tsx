@@ -27,7 +27,7 @@ const DashboardLayout = () => {
           <DashboardSidebar />
         </AppShell.Section>
       </AppShell.Navbar>
-      <AppShell.Main>
+      <AppShell.Main h="100dvh" style={{ overflowY: 'auto' }}>
         <DashboardMain />
       </AppShell.Main>
     </AppShell>

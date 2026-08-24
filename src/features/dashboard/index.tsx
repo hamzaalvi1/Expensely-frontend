@@ -1,9 +1,12 @@
 import SummaryCard from './summary-card';
+import BudgetStatus from './budget-status';
 import IncomeExpenseChart from './income-expense-chart';
+import RecentTransactions from './recent-transactions';
+import SpendingByCategory from './spending-by-category';
 import HeadingSection from '@/components/heading-section';
 import { Grid, SimpleGrid, Stack } from '@mantine/core';
+
 import { useSummaryCardConfig } from './summary-card/use-summary-card-config';
-import SpendingByCategory from './spending-by-category';
 
 const Dashboard = () => {
   const summaryCardConfig = useSummaryCardConfig();
@@ -25,6 +28,12 @@ const Dashboard = () => {
         </Grid.Col>
         <Grid.Col span={{ base: 12, md: 5 }}>
           <SpendingByCategory />
+        </Grid.Col>
+        <Grid.Col span={{ base: 12, md: 4 }}>
+          <BudgetStatus />
+        </Grid.Col>
+        <Grid.Col span={{ base: 12, md: 8 }}>
+          <RecentTransactions />
         </Grid.Col>
       </Grid>
     </Stack>

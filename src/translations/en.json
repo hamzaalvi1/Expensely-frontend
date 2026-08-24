@@ -64,6 +64,12 @@
       "error": "Error in spending by category chart",
       "error-message": "We could not load the spending by category chart. Please try again."
     },
+    "budget-status": {
+      "title": "Budget Status"
+    },
+    "recent-transactions": {
+      "title": "Recent Transactions"
+    },
     "settings": "Settings",
     "logout": "Logout",
     "delete-my-account": "Delete my account"
