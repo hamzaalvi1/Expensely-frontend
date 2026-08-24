@@ -56,6 +56,9 @@
     "income-expense-chart": {
       "title": "Income vs Expenses"
     },
+    "spending-by-category": {
+      "title": "Spending by Category"
+    },
     "settings": "Settings",
     "logout": "Logout",
     "delete-my-account": "Delete my account"

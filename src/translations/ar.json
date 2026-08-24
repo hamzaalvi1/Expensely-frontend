@@ -56,6 +56,9 @@
     "income-expense-chart": {
       "title": "الدخل vs المصروفات"
     },
+    "spending-by-category": {
+      "title": "المصروفات حسب الفئة"
+    },
     "settings": "الإعدادات",
     "logout": "تسجيل الخروج",
     "delete-my-account": "حذف حسابي"
