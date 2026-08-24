@@ -21,7 +21,6 @@ const SpendingByCategoryContent = () => {
     ...category,
     color: colors[index % colors.length],
   }));
-  throw new Error('Test error');
   return (
     <Center h={350}>
       <DonutChart
