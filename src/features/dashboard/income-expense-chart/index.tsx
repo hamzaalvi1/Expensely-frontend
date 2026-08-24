@@ -1,19 +1,31 @@
-import { lazy } from 'react';
-import { Alert, Skeleton } from '@mantine/core';
-import withAsyncBoundary from '@/hoc/with-async-boundary';
+import { useState } from 'react';
+import Tabs from '@/components/tabs';
+import SectionCard from '../section-card';
+import IncomeExpenseChartContent from './content';
 
-const IncomeExpenseChartContent = lazy(() => import('./content'));
+const IncomeExpenseChart = () => {
+  const [period, setPeriod] = useState<string>('3m');
 
-const ChartLoading = () => <Skeleton h={350} radius="md" />;
+  return (
+    <SectionCard
+      title="dashboard.income-expense-chart.title"
+      wrapperProps={{ gap: '2xl' }}
+      rightContent={
+        <Tabs
+          value={period}
+          onChange={setPeriod}
+          tabs={[
+            { value: '30d', label: '30D' },
+            { value: '3m', label: '3M' },
+            { value: '6m', label: '6M' },
+            { value: '1y', label: '1Y' },
+          ]}
+        />
+      }
+    >
+      <IncomeExpenseChartContent />
+    </SectionCard>
+  );
+};
 
-const ChartError = () => (
-  <Alert color="red" title="Chart unavailable">
-    We could not load the income and expense chart. Please try again.
-  </Alert>
-);
-
-export default withAsyncBoundary(
-  IncomeExpenseChartContent,
-  ChartLoading,
-  ChartError,
-);
+export default IncomeExpenseChart;

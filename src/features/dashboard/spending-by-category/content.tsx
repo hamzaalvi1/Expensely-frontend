@@ -21,7 +21,6 @@ const SpendingByCategoryContent = () => {
     ...category,
     color: colors[index % colors.length],
   }));
-
   return (
     <Center h={350}>
       <DonutChart

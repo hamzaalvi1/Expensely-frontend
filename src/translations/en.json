@@ -52,13 +52,15 @@
       "outgoing": "Outgoing",
       "total-savings": "Total Savings",
       "goal-progress": "Goal Progress"
-    },
+    },  
     "income-expense-chart": {
-      "title": "Income vs Expenses"
+      "title": "Income vs Expenses",
+      "error": "Error in income and expense chart",
+      "error-message": "We could not load the income and expense chart. Please try again."
     },
     "spending-by-category": {
       "title": "Spending by Category",
-      "error": "Error loading spending by category chart",
+      "error": "Error in spending by category chart",
       "error-message": "We could not load the spending by category chart. Please try again."
     },
     "settings": "Settings",
