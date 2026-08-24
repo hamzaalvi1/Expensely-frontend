@@ -1,22 +1,31 @@
 import { Suspense } from 'react';
+import { QueryErrorResetBoundary } from '@tanstack/react-query';
 import AsyncErrorBoundary from './async-error-boundary';
 import type {
   AsyncBoundaryComponent,
   AsyncBoundaryComponentProps,
-  AsyncBoundaryFallbackComponent,
+  AsyncBoundaryErrorComponent,
+  AsyncBoundaryLoadingComponent,
 } from './types';
 
 const withAsyncBoundary = <P extends AsyncBoundaryComponentProps>(
   WrappedComponent: AsyncBoundaryComponent<P>,
-  LoadingComponent: AsyncBoundaryFallbackComponent,
-  ErrorComponent: AsyncBoundaryFallbackComponent,
+  LoadingComponent: AsyncBoundaryLoadingComponent,
+  ErrorComponent: AsyncBoundaryErrorComponent,
 ) => {
   return (props: P) => (
-    <AsyncErrorBoundary fallback={<ErrorComponent />}>
-      <Suspense fallback={<LoadingComponent />}>
-        <WrappedComponent {...props} />
-      </Suspense>
-    </AsyncErrorBoundary>
+    <QueryErrorResetBoundary>
+      {({ reset }) => (
+        <AsyncErrorBoundary
+          onReset={reset}
+          fallback={({ onRetry }) => <ErrorComponent onRetry={onRetry} />}
+        >
+          <Suspense fallback={<LoadingComponent />}>
+            <WrappedComponent {...props} />
+          </Suspense>
+        </AsyncErrorBoundary>
+      )}
+    </QueryErrorResetBoundary>
   );
 };
 

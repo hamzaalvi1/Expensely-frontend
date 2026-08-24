@@ -1,6 +1,6 @@
-import type { ReactNode } from 'react';
 
 export type ErrorStateProps = {
-  title: ReactNode;
-  description: ReactNode;
+  title: string;
+  description: string;
+  onRetry?: () => void;
 };

@@ -11,13 +11,18 @@ class AsyncErrorBoundary extends Component<
     return { hasError: true };
   }
 
+  resetErrorBoundary = () => {
+    this.props.onReset?.();
+    this.setState({ hasError: false });
+  };
+
   componentDidCatch(_error: Error, _errorInfo: ErrorInfo) {
     // Keep the boundary reusable; logging can be added by the app's error service.
   }
 
   render() {
     if (this.state.hasError) {
-      return this.props.fallback;
+      return this.props.fallback({ onRetry: this.resetErrorBoundary });
     }
 
     return this.props.children;

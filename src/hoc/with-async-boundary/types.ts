@@ -5,11 +5,19 @@ export type AsyncBoundaryComponentProps = object;
 export type AsyncBoundaryComponent<P extends AsyncBoundaryComponentProps> =
   ComponentType<P>;
 
-export type AsyncBoundaryFallbackComponent = ComponentType;
+export type AsyncErrorBoundaryFallbackProps = {
+  onRetry: () => void;
+};
+
+export type AsyncBoundaryLoadingComponent = ComponentType;
+
+export type AsyncBoundaryErrorComponent =
+  ComponentType<AsyncErrorBoundaryFallbackProps>;
 
 export type AsyncErrorBoundaryProps = {
   children: ReactNode;
-  fallback: ReactNode;
+  fallback: (props: AsyncErrorBoundaryFallbackProps) => ReactNode;
+  onReset?: () => void;
 };
 
 export type AsyncErrorBoundaryState = {

@@ -66,5 +66,8 @@
     "settings": "الإعدادات",
     "logout": "تسجيل الخروج",
     "delete-my-account": "حذف حسابي"
+  },
+  "error": {
+    "try-again": "حاول مرة أخرى"
   }
 }

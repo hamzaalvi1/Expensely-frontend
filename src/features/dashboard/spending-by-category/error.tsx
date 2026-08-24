@@ -1,12 +1,15 @@
-import { useTranslation } from 'react-i18next';
 import ErrorState from '@/components/error';
 
-export const SpendingByCategoryError = () => {
-  const { t } = useTranslation();
+export const SpendingByCategoryError = ({
+  onRetry,
+}: {
+  onRetry: () => void;
+}) => {
   return (
     <ErrorState
-      title={t('dashboard.spending-by-category.error')}
-      description={t('dashboard.spending-by-category.error-message')}
+      title='dashboard.spending-by-category.error'
+      description='dashboard.spending-by-category.error-message'
+      onRetry={onRetry}
     />
   );
 };

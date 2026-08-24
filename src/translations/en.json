@@ -66,5 +66,8 @@
     "settings": "Settings",
     "logout": "Logout",
     "delete-my-account": "Delete my account"
+  },
+  "error": {
+    "try-again": "Try again"
   }
 }
