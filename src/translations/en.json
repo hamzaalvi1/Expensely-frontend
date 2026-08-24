@@ -60,6 +60,7 @@
     },
     "spending-by-category": {
       "title": "Spending by Category",
+      "total": "Total",
       "error": "Error in spending by category chart",
       "error-message": "We could not load the spending by category chart. Please try again."
     },
