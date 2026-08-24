@@ -13,7 +13,7 @@ const withAsyncBoundary = <P extends AsyncBoundaryComponentProps>(
   LoadingComponent: AsyncBoundaryLoadingComponent,
   ErrorComponent: AsyncBoundaryErrorComponent,
 ) => {
-  return (props: P) => (
+  const AsyncBoundary = (props: P) => (
     <QueryErrorResetBoundary>
       {({ reset }) => (
         <AsyncErrorBoundary
@@ -27,6 +27,12 @@ const withAsyncBoundary = <P extends AsyncBoundaryComponentProps>(
       )}
     </QueryErrorResetBoundary>
   );
+
+  AsyncBoundary.displayName = `withAsyncBoundary(${
+    WrappedComponent.displayName ?? WrappedComponent.name ?? 'Component'
+  })`;
+
+  return AsyncBoundary;
 };
 
 export default withAsyncBoundary;
