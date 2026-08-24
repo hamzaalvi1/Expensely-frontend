@@ -57,7 +57,9 @@
       "title": "Income vs Expenses"
     },
     "spending-by-category": {
-      "title": "Spending by Category"
+      "title": "Spending by Category",
+      "error": "Error loading spending by category chart",
+      "error-message": "We could not load the spending by category chart. Please try again."
     },
     "settings": "Settings",
     "logout": "Logout",
