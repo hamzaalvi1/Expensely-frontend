@@ -33,6 +33,12 @@ const BudgetProgressBar = ({
       <Progress
         color="primary.4"
         size="lg"
+        radius="xl" 
+        styles={{
+          section: {
+            borderRadius: 'var(--progress-radius)',
+          },
+        }}
         {...progressProps}
         value={progressValue}
       />
