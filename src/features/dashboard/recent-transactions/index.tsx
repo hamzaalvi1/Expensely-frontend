@@ -1,4 +1,4 @@
-import SectionCard from '../section-card'
+import SectionCard from '../../../components/section-card'
 
 const RecentTransactions = () => {
   return (

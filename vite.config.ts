@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import react, { reactCompilerPreset } from "@vitejs/plugin-react";
+import babel from "@rolldown/plugin-babel";
 import { ViteWebfontDownload } from "vite-plugin-webfont-dl";
 import { fileURLToPath, URL } from "node:url";
 
@@ -13,6 +14,9 @@ export default defineConfig({
   },
   plugins: [
     react(),
+    babel({
+      presets: [reactCompilerPreset()],
+    }),
     ViteWebfontDownload(
       [
         "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap&subset=latin",

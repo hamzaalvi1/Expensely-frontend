@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Tabs from '@/components/tabs';
-import SectionCard from '../section-card';
+import SectionCard from '../../../components/section-card';
 import IncomeExpenseChartContent from './content';
 
 const IncomeExpenseChart = () => {

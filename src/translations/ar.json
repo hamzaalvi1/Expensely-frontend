@@ -78,5 +78,11 @@
  
   "error": {
     "try-again": "حاول مرة أخرى"
+  },
+  "transactions": {
+    "title": "المعاملات",
+    "description": "قائمة المعاملات.",
+    "add-transaction": "إضافة معاملة",
+    "transaction-trend": "اتجاه المعاملات"
   }
 }

@@ -1,7 +1,7 @@
 
 import { useTranslation } from 'react-i18next';
 
-import SectionCard from '../section-card';
+import SectionCard from '../../../components/section-card';
 import SpendingByCategoryContent from './content';
 
 
