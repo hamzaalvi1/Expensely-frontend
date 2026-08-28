@@ -1,25 +1,15 @@
 import { memo } from 'react';
 import { Box, Flex, Text, UnstyledButton } from '@mantine/core';
-import { EXPENSES, INCOME } from '@/constants/transactions';
-import type { TransactionTrendLegendProps } from './types';
+import type { TransactionTrendLegendProps } from '../types';
 
-const TRANSACTION_TREND_LEGENDS = [
-  {
-    name: INCOME,
-    color: 'primary.5',
-  },
-  {
-    name: EXPENSES,
-    color: 'danger.5',
-  },
-];
+import { TRANSACTION_TREND_SERIES } from '../use-transaction-trend';
 
 const TransactionTrendLegend = ({
   handleToggleSeriesVisibility,
 }: TransactionTrendLegendProps) => {
   return (
     <Flex justify="flex-end" align="center" gap="sm">
-      {TRANSACTION_TREND_LEGENDS.map(({ name, color }) => (
+      {TRANSACTION_TREND_SERIES.map(({ name, color }) => (
         <UnstyledButton
           key={name}
           onClick={() => handleToggleSeriesVisibility(name)}

@@ -83,6 +83,10 @@
     "title": "المعاملات",
     "description": "قائمة المعاملات.",
     "add-transaction": "إضافة معاملة",
-    "transaction-trend": "اتجاه المعاملات"
+    "transaction-trend": "اتجاه المعاملات",
+    "transaction-trend.error": "خطأ في تحميل الرسم البياني لاتجاه المعاملات",
+    "transaction-trend.error-message": "لا يمكننا تحميل الرسم البياني لاتجاه المعاملات. يرجى المحاولة مرة أخرى.",
+    "ai-insights": "رؤى الذكاء الاصطناعي",
+    "generate-insight": "إنشاء رؤية"
   }
 }

@@ -81,6 +81,10 @@
     "title": "Transactions",
     "description": "All your income and expenses.",
     "add-transaction": "Add Transaction",
-    "transaction-trend": "Transaction Trend"
+    "transaction-trend": "Transaction Trend",
+    "transaction-trend.error": "Error in transaction trend chart",
+    "transaction-trend.error-message": "We could not load the transaction trend chart. Please try again.",
+    "ai-insights": "AI Insights",
+    "generate-insight": "Generate Insight"
   }
 }

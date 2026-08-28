@@ -15,7 +15,7 @@ const HeadingSection = ({
     <Stack gap="xs" {...containerProps} className={className}>
       <Title
         order={2}
-        fz="4xl"
+        fz={{ base: "2xl", md: "4xl" }}
         fw="bold"
         lh="heading"
         lts="-0.64px"

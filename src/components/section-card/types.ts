@@ -4,7 +4,9 @@ export type SectionCardProps = {
     title: string;
     titleProps?: TitleProps;
     containerProps?: CardProps;
-    children: React.ReactNode;
+    children?: React.ReactNode;
     wrapperProps?: StackProps;
     rightContent?: React.ReactNode;
+    withTopAccent?: boolean;
+    titleIcon?: React.ReactNode;
 }
