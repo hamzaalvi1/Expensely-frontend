@@ -13,10 +13,37 @@ export interface DataTableToolbarProps {
 }
 
 export interface DataTableProps {
+  adapter: DataTableAdapter;
   containerProps?: CardProps;
   children?: ReactNode;
 }
 
 export interface DataTableSectionProps {
   children?: ReactNode;
+}
+
+export interface DataTableHeaderGroup {
+  id: string;
+  headers: DataTableHeader[];
+}
+
+export interface DataTableHeader {
+  id: string;
+  colSpan: number;
+  content: ReactNode;
+}
+
+export interface DataTableRow {
+  id: string;
+  cells: DataTableCell[];
+}
+
+export interface DataTableCell {
+  id: string;
+  content: ReactNode;
+}
+
+export interface DataTableAdapter {
+  getHeaderGroups: () => DataTableHeaderGroup[];
+  getRows: () => DataTableRow[];
 }

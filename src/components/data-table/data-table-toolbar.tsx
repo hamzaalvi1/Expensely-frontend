@@ -8,7 +8,7 @@ export const DataTableToolbar = ({
   rightContent,
 }: DataTableToolbarProps) => {
   return (
-    <Flex justify="space-between" {...toolbarWrapperProps}>
+    <Flex justify="space-between" p="md" {...toolbarWrapperProps}>
       {search && <SearchBar {...search} />}
       {rightContent}
     </Flex>

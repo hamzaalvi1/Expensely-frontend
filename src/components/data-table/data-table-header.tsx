@@ -1,16 +1,21 @@
 import { Table } from '@mantine/core';
-import type { DataTableSectionProps } from './types';
+import type { TableTheadProps } from '@mantine/core';
+import { useDataTableContext } from './data-table-context';
 
-export const DataTableHeader = ({ children }: DataTableSectionProps) => {
+export const DataTableHeader = (props: TableTheadProps) => {
+  const { adapter } = useDataTableContext();
+
   return (
-    <Table.Thead
-      bg="secondary.3"
-      c="var(--app-color-text-placeholder)"
-      style={{
-        borderBottom: '1px solid var(--mantine-color-neutral-2)',
-      }}
-    >
-      {children}
+    <Table.Thead {...props}>
+      {adapter.getHeaderGroups().map((headerGroup) => (
+        <Table.Tr key={headerGroup.id}>
+          {headerGroup.headers.map((header) => (
+            <Table.Th key={header.id} colSpan={header.colSpan}>
+              {header.content}
+            </Table.Th>
+          ))}
+        </Table.Tr>
+      ))}
     </Table.Thead>
   );
 };
