@@ -7,6 +7,7 @@ import HeadingSection from '@/components/heading-section';
 
 import { Button, Flex, Stack, Grid, ActionIcon, Tooltip } from '@mantine/core';
 import TransactionAIInsights from './transaction-ai-insights';
+import DataTable from '@/components/data-table';
 
 const Transactions = () => {
   const { t } = useTranslation();
@@ -40,6 +41,9 @@ const Transactions = () => {
         </Grid.Col>
         <Grid.Col span={12}>
           <TransactionAIInsights />
+        </Grid.Col>
+         <Grid.Col span={12}>
+          <DataTable  />
         </Grid.Col>
       </Grid>
     </Stack>

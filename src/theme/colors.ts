@@ -157,8 +157,30 @@ export const MantineDanger = [
 ] as const;
 
 export const Neutral = {
+  50: "#F9FAFB",
+  100: "#F3F4F6",
   200: "#E5E7EB",
+  300: "#D1D5DB",
+  400: "#9CA3AF",
+  500: "#6B7280",
+  600: "#4B5563",
+  700: "#374151",
+  800: "#1F2937",
+  900: "#111827",
 } as const;
+
+export const MantineNeutral = [
+  Neutral[50],
+  Neutral[100],
+  Neutral[200],
+  Neutral[300],
+  Neutral[400],
+  Neutral[500],
+  Neutral[600],
+  Neutral[700],
+  Neutral[800],
+  Neutral[900],
+] as const;
 
 export const Text = {
   primary: "#0f172a",
