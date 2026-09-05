@@ -16,7 +16,7 @@ const transactionTableFeatures = tableFeatures({
 
 const TransactionTable = () => {
   const table = useTable({
-    data: [],
+    data: transactionTableData,
     columns: transactionTableColumns,
     features: transactionTableFeatures,
     initialState: {
