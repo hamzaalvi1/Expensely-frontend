@@ -29,6 +29,11 @@ export interface DataTableSectionProps {
   children?: ReactNode;
 }
 
+export interface DataTableFooterProps {
+  hasPaginationAndDetails?: boolean;
+  footerContent?: ReactNode;
+}
+
 export interface DataTableHeaderGroup {
   id: string;
   headers: DataTableHeader[];

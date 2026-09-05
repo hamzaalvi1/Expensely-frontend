@@ -1,11 +1,11 @@
-import SectionCard from '../../../components/section-card'
+import SectionCard from '../../../components/section-card';
 
 const RecentTransactions = () => {
   return (
     <SectionCard title="dashboard.recent-transactions.title">
-        <div>RecentTransactions</div>
+      <div>RecentTransactions</div>
     </SectionCard>
-  )
-}
+  );
+};
 
-export default RecentTransactions
+export default RecentTransactions;
