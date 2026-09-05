@@ -6,8 +6,7 @@ import {
   tableFeatures,
   useTable,
 } from '@tanstack/react-table';
-import { createTanStackTableAdapter } from '@/adapters/tanstack-table';
-import type { TransactionTableProps } from './types';
+import { transactionTableColumns, transactionTableData } from '@/fixtures/transaction-table';
 
 const transactionTableFeatures = tableFeatures({
   ...coreFeatures,
@@ -15,19 +14,17 @@ const transactionTableFeatures = tableFeatures({
   paginatedRowModel: createPaginatedRowModel(),
 });
 
-const TransactionTable = ({ data, columns }: TransactionTableProps) => {
+const TransactionTable = () => {
   const table = useTable({
-    data,
-    columns,
+    data: [],
+    columns: transactionTableColumns,
     features: transactionTableFeatures,
     initialState: {
       pagination: { pageIndex: 0, pageSize: 10 },
     },
   });
-  const adapter = createTanStackTableAdapter(table);
-
   return (
-    <DataTable adapter={adapter}>
+    <DataTable table={table} > 
       <DataTable.Toolbar search={{ value: '', onChange: () => {} }} />
       <DataTable.Content>
         <DataTable.Header c='neutral.4' tt="uppercase" />

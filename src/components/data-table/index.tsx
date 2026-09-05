@@ -1,4 +1,6 @@
 import { Card } from '@mantine/core';
+import { createTanStackTableAdapter } from '@/adapters/tanstack-table';
+import type { RowData, TableFeatures } from '@tanstack/table-core';
 import { DataTableBody } from './data-table-body';
 import { DataTableContent } from './data-table-content';
 import { DataTableProvider } from './data-table-context';
@@ -7,13 +9,16 @@ import { DataTableHeader } from './data-table-header';
 import { DataTableToolbar } from './data-table-toolbar';
 import type { DataTableProps } from './types';
 
-const DataTableRoot = ({
+const DataTableRoot = <TFeatures extends TableFeatures, TData extends RowData>({
   children,
-  adapter,
+  table,
   containerProps,
-}: DataTableProps) => {
+  isLoading = false,
+}: DataTableProps<TFeatures, TData>) => {
+  const adapter = createTanStackTableAdapter(table);
+
   return (
-    <DataTableProvider value={{ adapter }}>
+    <DataTableProvider value={{ adapter, isLoading }}>
       <Card withBorder p="0" bdrs="md" {...containerProps}>
         {children}
       </Card>

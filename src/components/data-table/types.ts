@@ -1,9 +1,12 @@
-import type { CardProps, FlexProps } from '@mantine/core';
+import type { CardProps, FlexProps, TextInputProps } from '@mantine/core';
+import type { ReactTable } from '@tanstack/react-table';
+import type { RowData, TableFeatures } from '@tanstack/table-core';
 import type { ReactNode } from 'react';
 
 export interface SearchProps {
   value: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  searchInputProps?: TextInputProps;
 }
 
 export interface DataTableToolbarProps {
@@ -12,10 +15,14 @@ export interface DataTableToolbarProps {
   rightContent?: ReactNode;
 }
 
-export interface DataTableProps {
-  adapter: DataTableAdapter;
+export interface DataTableProps<
+  TFeatures extends TableFeatures,
+  TData extends RowData,
+> {
+  table: ReactTable<TFeatures, TData>;
   containerProps?: CardProps;
   children?: ReactNode;
+  isLoading?: boolean;
 }
 
 export interface DataTableSectionProps {

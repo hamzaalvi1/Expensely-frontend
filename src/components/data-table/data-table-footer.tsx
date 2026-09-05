@@ -4,10 +4,14 @@ import { useDataTableContext } from './data-table-context';
 
 export const DataTableFooter = () => {
   const { t } = useTranslation();
-  const { adapter } = useDataTableContext();
+  const { adapter, isLoading } = useDataTableContext();
   const { page, pageCount, pageSize, rowCount } = adapter.getPagination();
   const start = rowCount === 0 ? 0 : (page - 1) * pageSize + 1;
   const end = Math.min(page * pageSize, rowCount);
+
+  if (!isLoading && rowCount === 0) {
+    return null;
+  }
 
   return (
     <Flex
@@ -26,6 +30,7 @@ export const DataTableFooter = () => {
           data={["10", "25", "50",'100']}
           onChange={(value) => value && adapter.setPageSize(Number(value))}
           allowDeselect={false}
+          disabled={isLoading}
         />
         <Text size="sm" c="dimmed">
           {t('data-table.showing-entries', {
@@ -39,6 +44,7 @@ export const DataTableFooter = () => {
         value={page}
         total={Math.max(pageCount, 1)}
         onChange={adapter.setPage}
+        disabled={isLoading}
       />
     </Flex>
   );

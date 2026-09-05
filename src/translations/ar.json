@@ -90,7 +90,9 @@
     "generate-insight": "إنشاء رؤية"
   },
   "data-table": {
-    "showing-entries": "عرض {{start}} إلى {{end}} من أصل {{total}} إدخال"
+    "showing-entries": "عرض {{start}} إلى {{end}} من أصل {{total}} إدخال",
+    "empty-title": "لا توجد بيانات",
+    "empty-description": "لا توجد سجلات لعرضها."
   },
   "search": "ابحث..."
 }

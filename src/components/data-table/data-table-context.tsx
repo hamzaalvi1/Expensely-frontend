@@ -3,6 +3,7 @@ import type { DataTableAdapter } from './types';
 
 interface DataTableContextValue {
   adapter: DataTableAdapter;
+  isLoading: boolean;
 }
 
 const DataTableContext = createContext<DataTableContextValue | null>(null);
