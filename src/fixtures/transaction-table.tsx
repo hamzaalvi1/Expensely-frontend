@@ -1,18 +1,38 @@
 import { Badge } from '@/components/badge';
 import type { ColumnDef, CoreFeatures } from '@tanstack/react-table';
 import type { TransactionTableRow } from '@/features/transactions/transaction-table/types';
+import IconLabel from '@/components/icon-label';
+import { FaShoppingCart } from 'react-icons/fa';
 
-export const transactionTableColumns: ColumnDef<CoreFeatures, TransactionTableRow>[] = [
-  { accessorKey: 'category', header: 'Category' },
+export const transactionTableColumns: ColumnDef<
+  CoreFeatures,
+  TransactionTableRow
+>[] = [
+  {
+    accessorKey: 'category',
+    header: 'Category',
+    cell: ({ getValue }) => {
+      return (
+        <IconLabel
+          icon={<FaShoppingCart size={18} />}
+          label={getValue<string>()}
+        />
+      );
+    },
+  },
   { accessorKey: 'description', header: 'Description' },
   { accessorKey: 'date', header: 'Date' },
   {
     accessorKey: 'type',
     header: 'Type',
     cell: ({ getValue }) => {
+      const type = getValue<string>();
       return (
-        <Badge tone={getValue<string>() === 'Income' ? 'success' : 'danger'}>
-          {getValue<string>()}
+        <Badge
+          bg={type === 'Income' ? 'success.1' : 'danger.1'}
+          tone={type === 'Income' ? 'success' : 'danger'}
+        >
+          {type}
         </Badge>
       );
     },

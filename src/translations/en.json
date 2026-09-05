@@ -87,5 +87,8 @@
     "ai-insights": "AI Insights",
     "generate-insight": "Generate Insight"
   },
+  "data-table": {
+    "showing-entries": "Showing {{start}} to {{end}} of {{total}} entries"
+  },
   "search": "Search..."
 }

@@ -89,5 +89,8 @@
     "ai-insights": "رؤى الذكاء الاصطناعي",
     "generate-insight": "إنشاء رؤية"
   },
+  "data-table": {
+    "showing-entries": "عرض {{start}} إلى {{end}} من أصل {{total}} إدخال"
+  },
   "search": "ابحث..."
 }

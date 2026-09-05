@@ -46,4 +46,12 @@ export interface DataTableCell {
 export interface DataTableAdapter {
   getHeaderGroups: () => DataTableHeaderGroup[];
   getRows: () => DataTableRow[];
+  getPagination: () => {
+    page: number;
+    pageSize: number;
+    pageCount: number;
+    rowCount: number;
+  };
+  setPage: (page: number) => void;
+  setPageSize: (pageSize: number) => void;
 }
