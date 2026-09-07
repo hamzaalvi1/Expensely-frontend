@@ -22,7 +22,7 @@ const Tabs = ({
       radius="sm"
       {...restTabsProps}
     >
-      <MantineTabs.List grow p="xs" bg="secondary.0" bdrs="sm" {...listProps}>
+      <MantineTabs.List grow p="xs" bg="secondary.0" bdrs="sm"{...listProps}>
         {tabs.map(({ label, value, disabled }) => (
           <MantineTabs.Tab
             key={value}

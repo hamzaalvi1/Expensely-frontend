@@ -1,4 +1,4 @@
-import { Group, Text, Flex, ThemeIcon } from '@mantine/core';
+import { Text, Flex, ThemeIcon } from '@mantine/core';
 import type { IconLabelProps } from './types';
 
 const IconLabel = ({

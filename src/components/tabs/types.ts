@@ -1,5 +1,10 @@
 import type { ReactNode } from 'react';
-import type { TabsProps as MantineTabsProps, TabsListProps, TabsTabProps } from '@mantine/core';
+import type {
+  MantineStyleProps,
+  TabsProps as MantineTabsProps,
+  TabsListProps,
+  TabsTabProps,
+} from '@mantine/core';
 
 export interface TabProps {
   value: string;
@@ -11,6 +16,6 @@ export interface TabsProps
   tabs: TabProps[];
   value: string;
   onChange?: (value: string) => void;
-  listProps?: TabsListProps;
+  listProps?: Partial<TabsListProps> & MantineStyleProps;
   tabProps?: TabsTabProps;
 }
