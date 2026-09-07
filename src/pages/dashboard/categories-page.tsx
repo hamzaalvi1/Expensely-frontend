@@ -1,5 +1,7 @@
+import Categories from '@/features/categories';
+
 const CategoriesPage = () => {
-  return <div>CategoriesPage</div>;
+  return <Categories />;
 };
 
 export default CategoriesPage;

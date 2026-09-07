@@ -92,5 +92,12 @@
     "empty-title": "No data found",
     "empty-description": "There are no records to display."
   },
-  "search": "Search..."
+  "search": "Search...",
+  "categories": {
+    "title": "Categories",
+    "description": "All your categories.",
+    "add-category": "Add Category",
+    "expense-categories": "Expense Categories",
+    "income-categories": "Income Categories"
+  }
 }

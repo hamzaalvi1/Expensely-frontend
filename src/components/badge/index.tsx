@@ -16,12 +16,12 @@ export const Badge = ({
   ...props
 }: BadgeProps) => (
   <MantineBadge
-    {...props}
     radius="xs"
     size="md"
     tt="capitalize"
     variant="outline"
     color={badgeColors[tone]}
     autoContrast={autoContrast}
+    {...props}
   />
 );

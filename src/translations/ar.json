@@ -94,5 +94,12 @@
     "empty-title": "لا توجد بيانات",
     "empty-description": "لا توجد سجلات لعرضها."
   },
-  "search": "ابحث..."
+  "search": "ابحث...",
+  "categories": {
+    "title": "الفئات",
+    "description": "جميع الفئات الخاصة بك.",
+    "add-category": "إضافة فئة",
+    "expense-categories": "فئات المصروفات",
+    "income-categories": "فئات الدخل"
+  }
 }
