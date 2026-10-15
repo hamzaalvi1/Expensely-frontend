@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
 import { Divider, Flex, Stack, Text } from '@mantine/core';
-import CategoryByListContent from './category-by-list-content';
+import CategoryByListContent from './content';
 import { FaArrowDownLong, FaArrowUpLong } from 'react-icons/fa6';
 
 import { isExpense, isIncome } from '@/helpers/transaction-type';

@@ -99,5 +99,34 @@
     "add-category": "Add Category",
     "expense-categories": "Expense Categories",
     "income-categories": "Income Categories"
+  },
+  "budgets": {
+    "title": "Budgets",
+    "description": "Track your spending against your monthly limits.",
+    "add-budget": "Add Budget",
+    "error": {
+      "title": "Budgets could not be loaded",
+      "description": "Please try again later."
+    },
+    "categories": {
+      "food-and-dining": "Food & Dining",
+      "transportation": "Transportation",
+      "utilities": "Utilities",
+      "shopping": "Shopping"
+    },
+    "status": {
+      "on-track": "On Track",
+      "watch-spending": "Watch Spending",
+      "over-budget": "Over Budget"
+    },
+    "of": "of",
+    "remaining": "remaining",
+    "days-left": "{{count}} days left",
+    "sample-insight": "You are doing great with your {{category}} budget. At this rate, you'll have {{amount}} left over at month's end.",
+    "insights": {
+      "transportation": "You've spent 84% of your transportation budget early in the month. Consider adjusting travel plans.",
+      "utilities": "Utilities are tracking low this month. Expected final spend is around $240 based on historical data.",
+      "shopping": "You've exceeded your shopping budget by {{amount}}. We'll deduct this from your general savings allocation to balance."
+    }
   }
 }

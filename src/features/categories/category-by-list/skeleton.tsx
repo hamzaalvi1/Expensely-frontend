@@ -1,5 +1,5 @@
 import { Grid } from '@mantine/core';
-import CategoryCardSkeleton from '../../category-card/skeleton';
+import CategoryCardSkeleton from '../category-card/skeleton';
 
 const CategoryByListSkeleton = () => {
   return (

@@ -7,6 +7,7 @@ import { Components } from "./components";
 import { Breakpoints } from "./breakpoints";
 import {
   Base,
+  DangerBorder,
   MantineDanger,
   MantineInfo,
   MantineNeutral,
@@ -15,6 +16,8 @@ import {
   MantineSuccess,
   MantineWarning,
   Neutral,
+  PrimaryBorder,
+  PrimarySurface,
   Secondary,
   Text,
 } from "./colors";
@@ -67,6 +70,9 @@ export const theme = createTheme({
       secondaryHover: Secondary[100],
       neutralBorder: Neutral[200],
       iconSurface: "#E9EDFF",
+      dangerBorder: DangerBorder,
+      primaryBorder: PrimaryBorder,
+      primarySurface: PrimarySurface,
     },
     text: Text,
   },

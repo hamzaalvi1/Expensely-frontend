@@ -1,5 +1,7 @@
+import Budgets from '@/features/budgets';
+
 const BudgetPage = () => {
-  return <div>BudgetPage</div>;
+  return <Budgets />;
 };
 
 export default BudgetPage;

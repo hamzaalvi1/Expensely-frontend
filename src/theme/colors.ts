@@ -136,12 +136,16 @@ export const Danger = {
   200: "#FECDCA",
   300: "#FDA29B",
   400: "#F97066",
-  500: "#F04438",
+  500: "#EF4444",
   600: "#D92D20",
   700: "#B42318",
   800: "#912018",
   900: "#7A271A",
 } as const;
+
+export const DangerBorder = "rgba(239, 68, 68, 0.3)";
+export const PrimaryBorder = "rgba(15, 159, 154, 0.2)";
+export const PrimarySurface = "rgba(149, 243, 236, 0.2)";
 
 export const MantineDanger = [
   Danger[50],

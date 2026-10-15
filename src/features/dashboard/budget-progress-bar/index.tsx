@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Progress, Flex, Stack, Text } from '@mantine/core';
+import { calculatePercentage } from '@/features/budgets/helpers';
 import type { BudgetProgressBarProps } from './types';
 
 const BudgetProgressBar = ({
@@ -14,7 +15,7 @@ const BudgetProgressBar = ({
   budgetOutOfStyles,
 }: BudgetProgressBarProps) => {
   const { t } = useTranslation();
-  const progressValue = (+totalValue / +outOf) * 100;
+  const progressValue = calculatePercentage(+totalValue, +outOf);
   return (
     <Stack gap="xs" w="100%" {...containerProps}>
       <Flex justify="space-between" align="center" {...wrapperProps}>

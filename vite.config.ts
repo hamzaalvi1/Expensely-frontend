@@ -1,8 +1,11 @@
 import { defineConfig } from "vite";
-import react, { reactCompilerPreset } from "@vitejs/plugin-react";
-import babel from "@rolldown/plugin-babel";
+import react from "@vitejs/plugin-react";
 import { ViteWebfontDownload } from "vite-plugin-webfont-dl";
 import { fileURLToPath, URL } from "node:url";
+
+
+// HOCs capture component arguments in callbacks. Keep this boundary uncompiled
+// so the fallback retains its `ErrorComponent` closure at runtime.
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -14,9 +17,6 @@ export default defineConfig({
   },
   plugins: [
     react(),
-    babel({
-      presets: [reactCompilerPreset()],
-    }),
     ViteWebfontDownload(
       [
         "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap&subset=latin",
