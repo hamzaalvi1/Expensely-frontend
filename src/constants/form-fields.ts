@@ -10,3 +10,10 @@ export const signupFields = {
     PASSWORD: "password",
     CONFIRM_PASSWORD: "confirmPassword"
 } as const;
+
+export const categoryFormFields = {
+    NAME: "name",
+    TYPE: "type",
+    ICON: "icon",
+    COLOR: "color"
+} as const;

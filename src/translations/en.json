@@ -98,7 +98,46 @@
     "description": "All your categories.",
     "add-category": "Add Category",
     "expense-categories": "Expense Categories",
-    "income-categories": "Income Categories"
+    "income-categories": "Income Categories",
+    "modal": {
+      "title": "New Category",
+      "description": "Create a custom category to track your transactions.",
+      "close": "Close",
+      "name": "Category Name",
+      "name-placeholder": "e.g., Subscriptions",
+      "validation": {
+        "name-required": "Category name is required",
+        "icon-required": "Choose an icon",
+        "color-required": "Choose a color"
+      },
+      "type": "Type",
+      "expense": "Expense",
+      "income": "Income",
+      "icon": "Icon",
+      "icons": {
+        "wallet": "Wallet",
+        "plane": "Plane",
+        "utensils": "Dining",
+        "cart": "Shopping cart",
+        "gas": "Fuel",
+        "medical": "Medical"
+      },
+      "color-theme": "Color Theme",
+      "colors": {
+        "purple": "Purple",
+        "orange": "Orange",
+        "green": "Green",
+        "blue": "Blue",
+        "pink": "Pink",
+        "red": "Red",
+        "yellow": "Yellow",
+        "cyan": "Cyan",
+        "teal": "Teal",
+        "gray": "Gray"
+      },
+      "cancel": "Cancel",
+      "save": "Save Category"
+    }
   },
   "budgets": {
     "title": "Budgets",

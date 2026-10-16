@@ -100,7 +100,46 @@
     "description": "جميع الفئات الخاصة بك.",
     "add-category": "إضافة فئة",
     "expense-categories": "فئات المصروفات",
-    "income-categories": "فئات الدخل"
+    "income-categories": "فئات الدخل",
+    "modal": {
+      "title": "فئة جديدة",
+      "description": "أنشئ فئة مخصصة لتتبع معاملاتك.",
+      "close": "إغلاق",
+      "name": "اسم الفئة",
+      "name-placeholder": "مثال: الاشتراكات",
+      "validation": {
+        "name-required": "اسم الفئة مطلوب",
+        "icon-required": "اختر أيقونة",
+        "color-required": "اختر لونًا"
+      },
+      "type": "النوع",
+      "expense": "مصروف",
+      "income": "دخل",
+      "icon": "الأيقونة",
+      "icons": {
+        "wallet": "محفظة",
+        "plane": "طائرة",
+        "utensils": "مطاعم",
+        "cart": "عربة تسوق",
+        "gas": "وقود",
+        "medical": "طبي"
+      },
+      "color-theme": "لون الفئة",
+      "colors": {
+        "purple": "بنفسجي",
+        "orange": "برتقالي",
+        "green": "أخضر",
+        "blue": "أزرق",
+        "pink": "وردي",
+        "red": "أحمر",
+        "yellow": "أصفر",
+        "cyan": "سماوي",
+        "teal": "أزرق مخضر",
+        "gray": "رمادي"
+      },
+      "cancel": "إلغاء",
+      "save": "حفظ الفئة"
+    }
   },
   "budgets": {
     "title": "الميزانيات",
