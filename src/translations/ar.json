@@ -112,6 +112,41 @@
       }
     }
   },
+  "ai-insights": {
+    "title": "رؤى الذكاء الاصطناعي",
+    "description": "تحليل مالي مخصص استنادًا إلى دخلك وإنفاقك وميزانياتك.",
+    "monthly-summary": "الملخص الشهري",
+    "monthly-summary-description": "إنفاقك ضمن الحدود هذا الشهر. المصروفات الأساسية مستقرة والإنفاق التقديري أقل من المتوسط.",
+    "monthly-summary-top-category": "الإيجار",
+    "top-category": "الفئة الأعلى إنفاقًا: {{category}}",
+    "savings-tips": "نصائح للادخار",
+    "savings-tips-description": "استنادًا إلى معاملاتك الأخيرة، إليك توصيات مخصصة لتحسين ميزانيتك:",
+    "recent-analyses": "التحليلات الأخيرة",
+    "overview": {
+      "health-score": "مؤشر الصحة المالية",
+      "potential-savings": "المدخرات المحتملة",
+      "insights-generated": "الرؤى المنشأة",
+      "last-analysis": "آخر تحليل",
+      "health-score-description": "جيد",
+      "potential-savings-description": "استنادًا إلى اتجاهات الإنفاق الحالية",
+      "insights-generated-description": "عناصر قابلة للتنفيذ تتطلب الانتباه",
+      "last-analysis-description": "قبل يومين",
+      "healthy": "جيد",
+      "rerun-analysis": "إعادة التحليل"
+    },
+    "tips": {
+      "dining": "راجع نفقات الطعام والمطاعم الأخيرة. جرّب الطهي في المنزل ليلتين إضافيتين أسبوعيًا لتوفير نحو 120 دولارًا شهريًا.",
+      "subscriptions": "لديك 3 اشتراكات بث نشطة. يمكن أن يوفر لك دمجها 30 دولارًا شهريًا."
+    },
+    "analyses": {
+      "savings-tips": "نصائح للادخار",
+      "monthly-summary": "الملخص الشهري",
+      "two-days-ago": "أُنشئ قبل يومين",
+      "one-week-ago": "أُنشئ قبل أسبوع",
+      "potential-savings-badge": "نحو 310 دولار شهريًا",
+      "health-score-badge": "المؤشر 92"
+    }
+  },
   "data-table": {
     "showing-entries": "عرض {{start}} إلى {{end}} من أصل {{total}} إدخال",
     "empty-title": "لا توجد بيانات",

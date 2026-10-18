@@ -110,6 +110,41 @@
       }
     }
   },
+  "ai-insights": {
+    "title": "AI Insights",
+    "description": "Personalized financial analysis based on your income, spending and budgets.",
+    "monthly-summary": "Monthly Summary",
+    "monthly-summary-description": "Your spending is well within limits this month. Essential expenses are stable, and discretionary spending is lower than average.",
+    "monthly-summary-top-category": "Rent",
+    "top-category": "Top category: {{category}}",
+    "savings-tips": "Savings Tips",
+    "savings-tips-description": "Based on your recent transactions, here are tailored recommendations to optimize your budget:",
+    "recent-analyses": "Recent Analyses",
+    "overview": {
+      "health-score": "Health Score",
+      "potential-savings": "Potential Savings",
+      "insights-generated": "Insights Generated",
+      "last-analysis": "Last Analysis",
+      "health-score-description": "Healthy",
+      "potential-savings-description": "Based on current spending trends",
+      "insights-generated-description": "Actionable items requiring attention",
+      "last-analysis-description": "2 days ago",
+      "healthy": "Healthy",
+      "rerun-analysis": "Re-run Analysis"
+    },
+    "tips": {
+      "dining": "Review recent 'Food & Dining' expenses. Consider cooking at home 2 more nights a week to save roughly $120/mo.",
+      "subscriptions": "You have 3 streaming subscriptions active. Consolidating could save you $30/mo."
+    },
+    "analyses": {
+      "savings-tips": "Savings Tips",
+      "monthly-summary": "Monthly Summary",
+      "two-days-ago": "Generated 2 days ago",
+      "one-week-ago": "Generated 1 week ago",
+      "potential-savings-badge": "~$310/MO",
+      "health-score-badge": "SCORE 92"
+    }
+  },
   "data-table": {
     "showing-entries": "Showing {{start}} to {{end}} of {{total}} entries",
     "empty-title": "No data found",
