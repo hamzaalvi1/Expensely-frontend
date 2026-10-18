@@ -87,7 +87,30 @@
     "transaction-trend.error": "خطأ في تحميل الرسم البياني لاتجاه المعاملات",
     "transaction-trend.error-message": "لا يمكننا تحميل الرسم البياني لاتجاه المعاملات. يرجى المحاولة مرة أخرى.",
     "ai-insights": "رؤى الذكاء الاصطناعي",
-    "generate-insight": "إنشاء رؤية"
+    "generate-insight": "إنشاء رؤية",
+    "modal": {
+      "title": "معاملة جديدة",
+      "description": "أضف معاملة دخل أو مصروف جديدة.",
+      "close": "إغلاق",
+      "expense": "مصروف",
+      "income": "دخل",
+      "amount": "المبلغ",
+      "date": "التاريخ",
+      "category": "الفئة",
+      "category-placeholder": "اختر فئة",
+      "description-label": "الوصف",
+      "description-placeholder": "ما الغرض من هذه المعاملة؟",
+      "notes": "ملاحظات (اختياري)",
+      "notes-placeholder": "أضف أي تفاصيل إضافية",
+      "cancel": "إلغاء",
+      "save": "حفظ المعاملة",
+      "validation": {
+        "amount": "أدخل مبلغًا أكبر من صفر",
+        "date": "اختر تاريخًا",
+        "category": "اختر فئة",
+        "description": "أدخل وصفًا"
+      }
+    }
   },
   "data-table": {
     "showing-entries": "عرض {{start}} إلى {{end}} من أصل {{total}} إدخال",
@@ -174,6 +197,26 @@
       "transportation": "أنفقت 84٪ من ميزانية المواصلات في وقت مبكر من الشهر. فكّر في تعديل خطط التنقل.",
       "utilities": "إنفاق المرافق منخفض هذا الشهر. من المتوقع أن يبلغ الإنفاق النهائي نحو 240 دولارًا استنادًا إلى البيانات السابقة.",
       "shopping": "تجاوزت ميزانية التسوق بمقدار {{amount}}. سنخصم هذا المبلغ من مخصصات المدخرات العامة للموازنة."
+    },
+    "modal": {
+      "title": "إنشاء ميزانية",
+      "description": "حدد حدود الإنفاق الشهرية وتابع أهدافك.",
+      "close": "إغلاق",
+      "category": "الفئة",
+      "category-placeholder": "اختر فئة",
+      "monthly-limit": "الحد الشهري",
+      "cycle": "دورة الميزانية",
+      "monthly-cycle": "شهريًا (تجديد في اليوم الأول)",
+      "weekly-cycle": "أسبوعيًا",
+      "alert-threshold": "حد التنبيه",
+      "notify-at": "إشعار عند {{threshold}}٪",
+      "alert-helper": "استلم إشعارات قبل تجاوز حدود الفئة.",
+      "cancel": "إلغاء",
+      "save": "إنشاء ميزانية",
+      "validation": {
+        "category": "اختر فئة",
+        "limit": "أدخل حدًا أكبر من صفر"
+      }
     }
   }
 }

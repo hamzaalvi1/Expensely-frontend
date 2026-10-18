@@ -15,6 +15,7 @@ const ModalWithBottomSheet = ({
   opened,
   onClose,
   children,
+  modalSize = 'md',
 }: ModalWithBottomSheetProps) => {
   const { isMobile } = useMediaQuery();
 
@@ -36,7 +37,7 @@ const ModalWithBottomSheet = ({
     <Modal
       {...commonOverlayProps}
       centered
-      size="md"
+      size={modalSize}
       opened={opened}
       onClose={onClose}
     >

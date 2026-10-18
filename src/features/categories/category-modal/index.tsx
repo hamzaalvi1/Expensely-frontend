@@ -1,17 +1,20 @@
 import { Stack } from '@mantine/core';
+import { useTranslation } from 'react-i18next';
 
-import type { CategoryModalProps } from './types';
-import { CategoryFormProvider } from '@/context/category-form-context';
-import { categoryFormFields } from '@/constants/form-fields';
 import ModalWithBottomSheet from '@/components/modal-with-bottom-sheet';
+import ModalWithBottomSheetFooter from '@/components/modal-with-bottom-sheet/footer';
+import ModalWithBottomSheetHeader from '@/components/modal-with-bottom-sheet/header';
+import { categoryFormFields } from '@/constants/form-fields';
+import { CategoryFormProvider } from '@/context/category-form-context';
+
 import CategoryColorSelector from './category-color-selector';
 import CategoryIconSelector from './category-icon-selector';
 import CategoryModalFields from './category-modal-fields';
-import CategoryModalFooter from './category-modal-footer';
-import CategoryModalHeader from './category-modal-header';
+import type { CategoryModalProps } from './types';
 import { useCategoryModal } from './use-category-modal';
 
 const CategoryModal = ({ opened, onClose, onSubmit }: CategoryModalProps) => {
+  const { t } = useTranslation();
   const { categoryForm, handleClose, handleSubmit } = useCategoryModal({
     onClose,
     onSubmit,
@@ -24,7 +27,12 @@ const CategoryModal = ({ opened, onClose, onSubmit }: CategoryModalProps) => {
     >
       <CategoryFormProvider form={categoryForm}>
         <Stack gap={0}>
-          <CategoryModalHeader onClose={handleClose} />
+          <ModalWithBottomSheetHeader
+            title={t('categories.modal.title')}
+            description={t('categories.modal.description')}
+            closeLabel={t('categories.modal.close')}
+            onClose={handleClose}
+          />
 
           <form onSubmit={handleSubmit}>
             <Stack gap="md" p="md">
@@ -33,7 +41,11 @@ const CategoryModal = ({ opened, onClose, onSubmit }: CategoryModalProps) => {
               <CategoryColorSelector key={categoryForm.key(categoryFormFields.COLOR)} />
             </Stack>
 
-            <CategoryModalFooter onCancel={handleClose} />
+            <ModalWithBottomSheetFooter
+              cancelLabel={t('categories.modal.cancel')}
+              submitLabel={t('categories.modal.save')}
+              onCancel={handleClose}
+            />
           </form>
         </Stack>
       </CategoryFormProvider>

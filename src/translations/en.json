@@ -85,7 +85,30 @@
     "transaction-trend.error": "Error in transaction trend chart",
     "transaction-trend.error-message": "We could not load the transaction trend chart. Please try again.",
     "ai-insights": "AI Insights",
-    "generate-insight": "Generate Insight"
+    "generate-insight": "Generate Insight",
+    "modal": {
+      "title": "New Transaction",
+      "description": "Add a new income or expense transaction.",
+      "close": "Close",
+      "expense": "Expense",
+      "income": "Income",
+      "amount": "Amount",
+      "date": "Date",
+      "category": "Category",
+      "category-placeholder": "Select a category",
+      "description-label": "Description",
+      "description-placeholder": "What was this transaction for?",
+      "notes": "Notes (optional)",
+      "notes-placeholder": "Add any additional details",
+      "cancel": "Cancel",
+      "save": "Save Transaction",
+      "validation": {
+        "amount": "Enter an amount greater than zero",
+        "date": "Choose a date",
+        "category": "Choose a category",
+        "description": "Enter a description"
+      }
+    }
   },
   "data-table": {
     "showing-entries": "Showing {{start}} to {{end}} of {{total}} entries",
@@ -172,6 +195,26 @@
       "transportation": "You've spent 84% of your transportation budget early in the month. Consider adjusting travel plans.",
       "utilities": "Utilities are tracking low this month. Expected final spend is around $240 based on historical data.",
       "shopping": "You've exceeded your shopping budget by {{amount}}. We'll deduct this from your general savings allocation to balance."
+    },
+    "modal": {
+      "title": "Create Budget",
+      "description": "Set monthly spending limits and track your targets.",
+      "close": "Close",
+      "category": "Category",
+      "category-placeholder": "Select a category",
+      "monthly-limit": "Monthly Limit",
+      "cycle": "Budget Cycle",
+      "monthly-cycle": "Monthly (Resets 1st)",
+      "weekly-cycle": "Weekly",
+      "alert-threshold": "Alert Threshold",
+      "notify-at": "Notify at {{threshold}}%",
+      "alert-helper": "Receive push & email notifications before exceeding category caps.",
+      "cancel": "Cancel",
+      "save": "Create Budget",
+      "validation": {
+        "category": "Choose a category",
+        "limit": "Enter a limit greater than zero"
+      }
     }
   }
 }

@@ -17,3 +17,19 @@ export const categoryFormFields = {
     ICON: "icon",
     COLOR: "color"
 } as const;
+
+export const transactionFormFields = {
+    TYPE: "type",
+    AMOUNT: "amount",
+    DATE: "date",
+    CATEGORY: "category",
+    DESCRIPTION: "description",
+    NOTES: "notes"
+} as const;
+
+export const budgetFormFields = {
+    CATEGORY: "category",
+    LIMIT: "limit",
+    CYCLE: "cycle",
+    ALERT_THRESHOLD: "alertThreshold"
+} as const;
