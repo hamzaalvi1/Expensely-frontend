@@ -120,7 +120,13 @@
         "utensils": "Dining",
         "cart": "Shopping cart",
         "gas": "Fuel",
-        "medical": "Medical"
+        "medical": "Medical",
+        "home": "Home",
+        "car": "Car",
+        "entertainment": "Entertainment",
+        "education": "Education",
+        "salary": "Salary",
+        "investment": "Investment"
       },
       "color-theme": "Color Theme",
       "colors": {

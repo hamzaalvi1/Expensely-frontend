@@ -1,8 +1,9 @@
-import { Modal, Stack } from '@mantine/core';
+import { Stack } from '@mantine/core';
 
 import type { CategoryModalProps } from './types';
 import { CategoryFormProvider } from '@/context/category-form-context';
 import { categoryFormFields } from '@/constants/form-fields';
+import ModalWithBottomSheet from '@/components/modal-with-bottom-sheet';
 import CategoryColorSelector from './category-color-selector';
 import CategoryIconSelector from './category-icon-selector';
 import CategoryModalFields from './category-modal-fields';
@@ -17,15 +18,9 @@ const CategoryModal = ({ opened, onClose, onSubmit }: CategoryModalProps) => {
   });
 
   return (
-    <Modal
-      centered
+    <ModalWithBottomSheet
       opened={opened}
       onClose={handleClose}
-      size="md"
-      radius="md"
-      padding={0}
-      withCloseButton={false}
-      overlayProps={{ backgroundOpacity: 0.7 }}
     >
       <CategoryFormProvider form={categoryForm}>
         <Stack gap={0}>
@@ -42,7 +37,7 @@ const CategoryModal = ({ opened, onClose, onSubmit }: CategoryModalProps) => {
           </form>
         </Stack>
       </CategoryFormProvider>
-    </Modal>
+    </ModalWithBottomSheet>
   );
 };
 

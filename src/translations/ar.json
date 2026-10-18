@@ -122,7 +122,13 @@
         "utensils": "مطاعم",
         "cart": "عربة تسوق",
         "gas": "وقود",
-        "medical": "طبي"
+        "medical": "طبي",
+        "home": "المنزل",
+        "car": "السيارة",
+        "entertainment": "الترفيه",
+        "education": "التعليم",
+        "salary": "الراتب",
+        "investment": "الاستثمار"
       },
       "color-theme": "لون الفئة",
       "colors": {

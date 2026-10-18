@@ -1,9 +1,15 @@
 import { Center, Radio, SimpleGrid, Stack, Text } from '@mantine/core';
 import { useTranslation } from 'react-i18next';
 import {
+  FaBookOpen,
   FaBriefcaseMedical,
+  FaCar,
   FaCartShopping,
+  FaChartLine,
+  FaFilm,
   FaGasPump,
+  FaHouse,
+  FaMoneyBillWave,
   FaPlane,
   FaUtensils,
   FaWallet,
@@ -21,6 +27,12 @@ const iconOptions = [
   { id: 'cart', Icon: FaCartShopping },
   { id: 'gas', Icon: FaGasPump },
   { id: 'medical', Icon: FaBriefcaseMedical },
+  { id: 'home', Icon: FaHouse },
+  { id: 'car', Icon: FaCar },
+  { id: 'entertainment', Icon: FaFilm },
+  { id: 'education', Icon: FaBookOpen },
+  { id: 'salary', Icon: FaMoneyBillWave },
+  { id: 'investment', Icon: FaChartLine },
 ] as const;
 
 const CategoryIconSelector = () => {

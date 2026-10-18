@@ -30,6 +30,10 @@ const CategoryModalFields = () => {
         ]}
         allowDeselect={false}
         checkIconPosition='right'
+        comboboxProps={{
+          position: 'bottom-start',
+          middlewares: { shift: { mainAxis: true } },
+        }}
       />
     </Stack>
   );
