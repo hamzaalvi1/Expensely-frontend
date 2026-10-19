@@ -1,10 +1,12 @@
-import type { StackProps, TextProps, TitleProps } from "@mantine/core"
+import type { StackProps, TextProps, TitleProps } from '@mantine/core';
+import type { ReactNode } from 'react';
 
-export type HeadingSectionProps = {
-  title: string
-  description: string
-  containerProps?: StackProps
-  className?: string
-  titleProps?: TitleProps
-  descriptionProps?: TextProps
+export interface HeadingSectionProps {
+  title: string;
+  description: string;
+  containerProps?: StackProps;
+  className?: string;
+  titleProps?: TitleProps;
+  descriptionProps?: TextProps;
+  leftSection?: ReactNode;
 }

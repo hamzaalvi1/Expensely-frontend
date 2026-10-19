@@ -1,10 +1,13 @@
-import SummaryCard from './summary-card';
+import { Grid, SimpleGrid, Stack } from '@mantine/core';
+
+import { DashboardIcon } from '@/assets/icons';
+import HeadingSection from '@/components/heading-section';
+
 import BudgetStatus from './budget-status';
 import IncomeExpenseChart from './income-expense-chart';
 import RecentTransactions from './recent-transactions';
+import SummaryCard from './summary-card';
 import SpendingByCategory from './spending-by-category';
-import HeadingSection from '@/components/heading-section';
-import { Grid, SimpleGrid, Stack } from '@mantine/core';
 
 import { useSummaryCardConfig } from './summary-card/use-summary-card-config';
 
@@ -16,6 +19,15 @@ const Dashboard = () => {
       <HeadingSection
         title="dashboard.title"
         description="dashboard.description"
+        titleProps={{ order: 1 }}
+        leftSection={
+          <DashboardIcon
+            width={32}
+            height={32}
+            aria-hidden
+            style={{ color: 'var(--mantine-color-primary-5)' }}
+          />
+        }
       />
       <SimpleGrid cols={{ base: 1, md: 4 }} spacing="sm">
         {summaryCardConfig.map(item => (

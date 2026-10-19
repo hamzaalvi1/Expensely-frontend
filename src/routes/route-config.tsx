@@ -21,6 +21,7 @@ const {
   CATEGORIES,
   BUDGETS,
   AI_INSIGHTS,
+  SETTINGS,
 } = ROUTES_PATHS;
 
 export const routeConfig: RouteObject[] = [
@@ -59,6 +60,7 @@ export const routeConfig: RouteObject[] = [
                 AI_INSIGHTS,
                 '/src/pages/dashboard/ai-insight-page.tsx',
               ),
+              lazyRoute(SETTINGS, '/src/pages/dashboard/settings-page.tsx'),
             ],
           },
         ],

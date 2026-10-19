@@ -3,15 +3,18 @@ import { IoIosSettings } from 'react-icons/io';
 import { FaTrashCan } from 'react-icons/fa6';
 import { useTranslation } from 'react-i18next';
 
+import { ROUTES_PATHS } from '@/constants/routes';
+import { useLocalizedNavigate } from '@/hooks/use-localized-navigate';
+
 const AvatarMenuBar = () => {
   const { t } = useTranslation();
+  const navigate = useLocalizedNavigate();
+
   const menuItems = [
     {
       label: t('dashboard.settings'),
       icon: <IoIosSettings size={18} />,
-      onClick: () => {
-        console.log('settings');
-      },
+      onClick: () => navigate(ROUTES_PATHS.SETTINGS),
     },
     {
       label: t('dashboard.delete-my-account'),
@@ -49,6 +52,7 @@ const AvatarMenuBar = () => {
             color={item.color}
             fz="xs"
             leftSection={item.icon}
+            onClick={item.onClick}
             py="xs"
           >
             {item.label}

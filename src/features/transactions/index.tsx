@@ -1,12 +1,15 @@
-import { useTranslation } from 'react-i18next';
-import { useDisclosure } from '@mantine/hooks';
-import TransactionTrend from './transaction-trend';
-import HeadingSection from '@/components/heading-section';
-import AddButton from '@/components/add-button';
 import { Flex, Grid, Stack } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
+import { useTranslation } from 'react-i18next';
+
+import { TransactionIcon } from '@/assets/icons';
+import AddButton from '@/components/add-button';
+import HeadingSection from '@/components/heading-section';
+
 import TransactionAIInsights from './transaction-ai-insights';
-import TransactionTable from './transaction-table';
 import TransactionModal from './transaction-modal';
+import TransactionTable from './transaction-table';
+import TransactionTrend from './transaction-trend';
 
 const Transactions = () => {
   const { t } = useTranslation();
@@ -18,6 +21,15 @@ const Transactions = () => {
         <HeadingSection
           title="transactions.title"
           description="transactions.description"
+          titleProps={{ order: 1 }}
+          leftSection={
+            <TransactionIcon
+              width={32}
+              height={32}
+              aria-hidden
+              style={{ color: 'var(--mantine-color-primary-5)' }}
+            />
+          }
         />
         <AddButton
           label={t('transactions.add-transaction')}

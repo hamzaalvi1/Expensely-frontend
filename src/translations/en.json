@@ -37,6 +37,7 @@
     "title": "Dashboard",
     "description": "A clear overview of your income, spending and monthly progress.",
     "navigation": {
+      "label": "Main navigation",
       "overview": "Overview",
       "transactions": "Transactions",
       "categories": "Categories",
@@ -73,6 +74,49 @@
     "settings": "Settings",
     "logout": "Logout",
     "delete-my-account": "Delete my account"
+  },
+  "settings": {
+    "title": "Settings",
+    "description": "Manage your profile, security, and preferences.",
+    "save-changes": "Save Changes",
+    "profile": {
+      "title": "Profile",
+      "description": "Update your personal information.",
+      "full-name": "Full Name",
+      "full-name-placeholder": "Enter your full name",
+      "email": "Email Address",
+      "email-placeholder": "Email address cannot be changed"
+    },
+    "security": {
+      "title": "Security",
+      "description": "Manage your password and account security.",
+      "current-password": "Current Password",
+      "current-password-placeholder": "Enter your current password",
+      "new-password": "New Password",
+      "new-password-placeholder": "Enter a new password",
+      "confirm-password": "Confirm New Password",
+      "confirm-password-placeholder": "Confirm your new password",
+      "update-password": "Update Password"
+    },
+    "preferences": {
+      "title": "Preferences",
+      "description": "Choose your currency and language.",
+      "currency": "Primary Currency",
+      "language": "Interface Language"
+    },
+    "danger-zone": {
+      "title": "Danger Zone",
+      "description": "Actions here can permanently affect your account.",
+      "delete-account-description": "Permanently delete your account and data.",
+      "delete-account": "Delete Account"
+    },
+    "validation": {
+      "full-name": "Full name is required.",
+      "current-password": "Current password is required.",
+      "new-password": "Password must be at least 8 characters.",
+      "confirm-password": "Confirm your new password.",
+      "passwords-do-not-match": "Passwords do not match."
+    }
   },
   "error": {
     "try-again": "Try again"

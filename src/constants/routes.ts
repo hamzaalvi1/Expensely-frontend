@@ -11,4 +11,5 @@ export const ROUTES_PATHS = {
     CATEGORIES: "categories",
     BUDGETS: "budgets",
     AI_INSIGHTS: "ai-insights",
+    SETTINGS: "settings",
 } as const satisfies Record<string, string>;

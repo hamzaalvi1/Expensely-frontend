@@ -37,6 +37,7 @@
     "title": "لوحة التحكم",
     "description": "ملخص واضح للدخل والمصروفات والميزانيات الشهرية.",
     "navigation": {
+      "label": "التنقل الرئيسي",
       "overview": "ملخص",
       "transactions": "المعاملات",
       "categories": "الفئات",
@@ -76,6 +77,49 @@
     
   },
  
+  "settings": {
+    "title": "الإعدادات",
+    "description": "إدارة ملفك الشخصي وأمانك وتفضيلاتك.",
+    "save-changes": "حفظ التغييرات",
+    "profile": {
+      "title": "الملف الشخصي",
+      "description": "تحديث معلوماتك الشخصية.",
+      "full-name": "الاسم الكامل",
+      "full-name-placeholder": "أدخل اسمك الكامل",
+      "email": "البريد الإلكتروني",
+      "email-placeholder": "لا يمكن تغيير البريد الإلكتروني"
+    },
+    "security": {
+      "title": "الأمان",
+      "description": "إدارة كلمة المرور وأمان الحساب.",
+      "current-password": "كلمة المرور الحالية",
+      "current-password-placeholder": "أدخل كلمة المرور الحالية",
+      "new-password": "كلمة المرور الجديدة",
+      "new-password-placeholder": "أدخل كلمة مرور جديدة",
+      "confirm-password": "تأكيد كلمة المرور الجديدة",
+      "confirm-password-placeholder": "أكد كلمة المرور الجديدة",
+      "update-password": "تحديث كلمة المرور"
+    },
+    "preferences": {
+      "title": "التفضيلات",
+      "description": "اختر العملة واللغة.",
+      "currency": "العملة الأساسية",
+      "language": "لغة الواجهة"
+    },
+    "danger-zone": {
+      "title": "منطقة الخطر",
+      "description": "قد تؤثر هذه الإجراءات بشكل دائم على حسابك.",
+      "delete-account-description": "حذف حسابك وبياناتك نهائيًا.",
+      "delete-account": "حذف الحساب"
+    },
+    "validation": {
+      "full-name": "الاسم الكامل مطلوب.",
+      "current-password": "كلمة المرور الحالية مطلوبة.",
+      "new-password": "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل.",
+      "confirm-password": "أكد كلمة المرور الجديدة.",
+      "passwords-do-not-match": "كلمتا المرور غير متطابقتين."
+    }
+  },
   "error": {
     "try-again": "حاول مرة أخرى"
   },

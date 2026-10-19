@@ -2,6 +2,7 @@ import { AppShell } from '@mantine/core';
 import DashboardHeader from '@/layouts/dashboard/dashboard-header';
 import DashboardMain from '@/layouts/dashboard/dashboard-main';
 import DashboardSidebar from '@/layouts/dashboard/dashboard-sidebar';
+import DashboardBottomNavigation from '@/layouts/dashboard/dashboard-bottom-navigation';
 import Logo from '@/components/logo';
 
 const appShellStyles = {
@@ -15,6 +16,7 @@ const DashboardLayout = () => {
       style={appShellStyles}
       header={{ height: 55 }}
       navbar={{ width: 300, breakpoint: 'sm', collapsed: { mobile: true } }}
+      footer={{ height: 64, offset: false }}
     >
       <AppShell.Header>
         <DashboardHeader />
@@ -27,7 +29,14 @@ const DashboardLayout = () => {
           <DashboardSidebar />
         </AppShell.Section>
       </AppShell.Navbar>
-      <AppShell.Main h="100dvh" style={{ overflowY: 'auto' }}>
+      <AppShell.Footer hiddenFrom="sm" p={0}>
+        <DashboardBottomNavigation />
+      </AppShell.Footer>
+      <AppShell.Main
+        h="100dvh"
+        pb={{ base: 80, sm: 0 }}
+        style={{ overflowY: 'auto' }}
+      >
         <DashboardMain />
       </AppShell.Main>
     </AppShell>
