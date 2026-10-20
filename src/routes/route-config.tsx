@@ -18,6 +18,7 @@ const {
   LOGIN,
   REGISTER,
   TRANSACTIONS,
+  TRANSACTION_DETAILS,
   CATEGORIES,
   BUDGETS,
   AI_INSIGHTS,
@@ -53,6 +54,10 @@ export const routeConfig: RouteObject[] = [
               lazyRoute(
                 TRANSACTIONS,
                 '/src/pages/dashboard/transaction-page.tsx',
+              ),
+              lazyRoute(
+                TRANSACTION_DETAILS,
+                '/src/pages/dashboard/transaction-details-page.tsx',
               ),
               lazyRoute(CATEGORIES, '/src/pages/dashboard/categories-page.tsx'),
               lazyRoute(BUDGETS, '/src/pages/dashboard/budget-page.tsx'),

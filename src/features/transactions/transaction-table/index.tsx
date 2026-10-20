@@ -1,12 +1,21 @@
 import DataTable from '@/components/data-table';
+import { ROUTES_PATHS } from '@/constants/routes';
+import { useLocalizedNavigate } from '@/hooks/use-localized-navigate';
 import Tabs from '@/components/tabs';
 import { Flex, Select } from '@mantine/core';
+
 import { useTransactionTableController } from './use-transaction-table-controller';
-
-
 
 const TransactionTable = () => {
   const { table, categories } = useTransactionTableController();
+  const navigateLocalized = useLocalizedNavigate();
+
+  const handleRowClick = (id: string) => {
+    navigateLocalized(
+      `${ROUTES_PATHS.TRANSACTIONS}/${encodeURIComponent(id)}`,
+    );
+  };
+
   const rightSection = (
     <Flex
       gap="sm"
@@ -41,7 +50,7 @@ const TransactionTable = () => {
     </Flex>
   );
   return (
-    <DataTable table={table} > 
+    <DataTable table={table} onRowClick={handleRowClick}>
       <DataTable.Toolbar
         search={{ value: '', onChange: () => {} }}
         rightContent={rightSection}
@@ -52,8 +61,8 @@ const TransactionTable = () => {
         }}
       />
       <DataTable.Content>
-        <DataTable.Header c='neutral.4' tt="uppercase" />
-        <DataTable.Body fz='sm' />
+        <DataTable.Header c="neutral.4" tt="uppercase" />
+        <DataTable.Body fz="sm" />
       </DataTable.Content>
       <DataTable.Footer />
     </DataTable>

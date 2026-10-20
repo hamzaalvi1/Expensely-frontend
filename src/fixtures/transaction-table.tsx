@@ -51,11 +51,52 @@ export const transactionTableData: TransactionTableRow[] = [
   },
   {
     id: 'rent',
-    category: 'Rent',
+    category: 'Housing & Rent',
     description: 'Downtown Apartment',
-    date: 'Aug 28, 2024',
+    date: 'Oct 24, 2023',
     type: 'Expense',
     amount: '-$2,400.00',
+    details: {
+      status: 'Completed',
+      dateTime: 'Oct 24, 2023 at 9:00 AM',
+      categoryName: 'Housing & Rent',
+      paymentMethod: 'Bank Transfer ACH',
+      account: 'Chase Premier Checking (...4829)',
+      referenceId: 'TXN-849201-BCA',
+      notes:
+        '"November Rent + Utilities contribution. Paid early to avoid weekend processing delay."',
+      activity: [
+        {
+          title: 'transactions.details.activity.completed',
+          date: 'Oct 24, 2023 · 9:00 AM',
+        },
+        {
+          title: 'transactions.details.activity.bank-verified',
+          date: 'Oct 23, 2023 · 4:15 PM',
+        },
+        {
+          title: 'transactions.details.activity.created',
+          date: 'Oct 23, 2023 · 10:30 AM',
+        },
+      ],
+      recentHistory: [
+        {
+          date: 'Oct 24, 2023',
+          title: 'Downtown Apartment',
+          amount: '-$2,400.00',
+        },
+        {
+          date: 'Sep 24, 2023',
+          title: 'Downtown Apartment',
+          amount: '-$2,400.00',
+        },
+        {
+          date: 'Aug 24, 2023',
+          title: 'Downtown Apartment',
+          amount: '-$2,400.00',
+        },
+      ],
+    },
   },
   {
     id: 'groceries',

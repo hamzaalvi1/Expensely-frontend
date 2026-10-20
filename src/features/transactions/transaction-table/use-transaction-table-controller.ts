@@ -26,6 +26,7 @@ export const useTransactionTableController = () => {
     data: transactionTableData,
     columns: transactionTableColumns,
     features: transactionTableFeatures,
+    getRowId: row => row.id,
     initialState: {
       pagination: { pageIndex: 0, pageSize: 10 },
     },

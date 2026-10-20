@@ -23,6 +23,7 @@ export interface DataTableProps<
   containerProps?: CardProps;
   children?: ReactNode;
   isLoading?: boolean;
+  onRowClick?: (rowId: string) => void;
 }
 
 export interface DataTableSectionProps {

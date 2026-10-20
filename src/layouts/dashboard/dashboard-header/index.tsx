@@ -4,7 +4,7 @@ import { IoMdNotificationsOutline } from 'react-icons/io';
 
 const DashboardHeader = () => {
   return (
-    <Flex justify="space-between" align="center" h={'100%'} px="xl">
+    <Flex justify="space-between" align="center" h="100%" px="xl">
       <Flex align="center" gap="xs" justify="flex-end" w="100%">
         <Indicator color="danger.5" offset={7} size={8}>
           <ActionIcon

@@ -14,11 +14,12 @@ const DataTableRoot = <TFeatures extends TableFeatures, TData extends RowData>({
   table,
   containerProps,
   isLoading = false,
+  onRowClick,
 }: DataTableProps<TFeatures, TData>) => {
   const adapter = createTanStackTableAdapter(table);
 
   return (
-    <DataTableProvider value={{ adapter, isLoading }}>
+    <DataTableProvider value={{ adapter, isLoading, onRowClick }}>
       <Card withBorder p="0" bdrs="md" {...containerProps}>
         {children}
       </Card>

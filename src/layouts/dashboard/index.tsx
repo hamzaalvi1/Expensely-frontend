@@ -14,7 +14,7 @@ const DashboardLayout = () => {
     <AppShell
       layout="alt"
       style={appShellStyles}
-      header={{ height: 55 }}
+      header={{ height: { base: 64, sm: 55 } }}
       navbar={{ width: 300, breakpoint: 'sm', collapsed: { mobile: true } }}
       footer={{ height: 64, offset: false }}
     >

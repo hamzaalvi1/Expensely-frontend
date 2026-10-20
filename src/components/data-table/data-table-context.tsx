@@ -4,6 +4,7 @@ import type { DataTableAdapter } from './types';
 interface DataTableContextValue {
   adapter: DataTableAdapter;
   isLoading: boolean;
+  onRowClick?: (rowId: string) => void;
 }
 
 const DataTableContext = createContext<DataTableContextValue | null>(null);

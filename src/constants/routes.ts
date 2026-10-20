@@ -8,6 +8,7 @@ export const ROUTES_PATHS = {
     // Dashboard routes
     DASHBOARD: "dashboard",
     TRANSACTIONS: "transactions",
+    TRANSACTION_DETAILS: "transactions/:transactionId",
     CATEGORIES: "categories",
     BUDGETS: "budgets",
     AI_INSIGHTS: "ai-insights",
