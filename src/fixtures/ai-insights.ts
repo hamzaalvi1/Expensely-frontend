@@ -1,4 +1,12 @@
-export const aiOverviewStats = [
+type AiOverviewStat = {
+  key: 'healthScore' | 'potentialSavings' | 'insightsGenerated' | 'lastAnalysis';
+  title: string;
+  value: string;
+  suffix?: string;
+  description: string;
+};
+
+export const aiOverviewStats: AiOverviewStat[] = [
   {
     key: 'healthScore',
     title: 'ai-insights.overview.health-score',
@@ -25,7 +33,7 @@ export const aiOverviewStats = [
     value: '2d ago',
     description: 'ai-insights.overview.last-analysis-description',
   },
-] as const;
+];
 
 export const monthlySummary = {
   score: 92,
