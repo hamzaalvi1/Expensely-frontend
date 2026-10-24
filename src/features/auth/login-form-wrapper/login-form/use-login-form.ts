@@ -2,10 +2,15 @@ import { useForm,schemaResolver } from "@mantine/form";
 import { loginFields } from "@/constants/form-fields";
 import { loginFormSchema } from "@/validations/auth.validation";
 import type { LoginFormValues } from "./types";
+import { useLoginUser } from "@/queries/auth.queries";
+import { ROUTES_PATHS } from "@/constants/routes";
+import { useLocalizedNavigate } from "@/hooks/use-localized-navigate";
 
 const { EMAIL, PASSWORD, REMEMBER_ME } = loginFields;
 
 export const useLoginFormController = () => {
+  const { mutateAsync: loginUser, isPending: isLoggingInUser } = useLoginUser();
+  const navigate = useLocalizedNavigate();
   const {
     key: formKey,
     getInputProps,
@@ -20,12 +25,15 @@ export const useLoginFormController = () => {
     validate: schemaResolver(loginFormSchema),
   });
 
-  const handleLogin = (values: LoginFormValues) => {
-    console.log(values);
-    
+  const handleLogin = async (values: LoginFormValues) => {
+    await loginUser(values).then(() => {
+    }).then(() => {
+      navigate(ROUTES_PATHS.DASHBOARD);
+    });
   }
 
   return {
+    isLoggingInUser,
     formKey,
     handleLogin,
     getInputProps,

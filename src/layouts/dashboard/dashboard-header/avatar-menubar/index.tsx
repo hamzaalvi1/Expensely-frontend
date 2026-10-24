@@ -1,20 +1,36 @@
-import { Menu, Avatar } from '@mantine/core';
+import { Menu, Avatar, Text } from '@mantine/core';
 import { IoIosSettings } from 'react-icons/io';
+import { FiLogOut } from 'react-icons/fi';
 import { FaTrashCan } from 'react-icons/fa6';
 import { useTranslation } from 'react-i18next';
 
 import { ROUTES_PATHS } from '@/constants/routes';
+import { AUTH_QUERY_KEYS } from '@/constants/query-keys';
+import { clearAccessToken } from '@/helpers/auth';
 import { useLocalizedNavigate } from '@/hooks/use-localized-navigate';
+import { queryClient } from '@/lib/query-client';
+import { useGetMe } from '@/queries/auth.queries';
 
 const AvatarMenuBar = () => {
   const { t } = useTranslation();
   const navigate = useLocalizedNavigate();
+  const { data: user } = useGetMe();
+  const handleLogout = () => {
+    clearAccessToken();
+    queryClient.removeQueries({ queryKey: [AUTH_QUERY_KEYS.ME] });
+    navigate(ROUTES_PATHS.LOGIN, { replace: true });
+  };
 
   const menuItems = [
     {
       label: t('dashboard.settings'),
       icon: <IoIosSettings size={18} />,
       onClick: () => navigate(ROUTES_PATHS.SETTINGS),
+    },
+    {
+      label: t('dashboard.logout'),
+      icon: <FiLogOut size={16} />,
+      onClick: handleLogout,
     },
     {
       label: t('dashboard.delete-my-account'),
@@ -40,12 +56,21 @@ const AvatarMenuBar = () => {
             root: { cursor: 'pointer' },
             placeholder: { fontWeight: 600 },
           }}
-        >
-          HA
-        </Avatar>
+          name={user?.name}
+        />
       </Menu.Target>
 
       <Menu.Dropdown>
+        {user && (
+          <Menu.Label>
+            <Text size="sm" fw={500}>
+              {user.name}
+            </Text>
+            <Text size="xs" c="dimmed">
+              {user.email}
+            </Text>
+          </Menu.Label>
+        )}
         {menuItems.map(item => (
           <Menu.Item
             key={item.label}

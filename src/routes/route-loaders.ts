@@ -5,9 +5,10 @@ import type { SupportedLanguage } from "@/types/commons";
 import { isSupportedLanguage } from "@/helpers/supported-lang";
 import { localizedPath } from "@/helpers/localize-path";
 import { DEFAULT_LANGUAGE } from "@/constants/lang";
-
-// Temporary placeholder until authentication is connected to the API/session.
-const isAuthenticated = () => true;
+import { HTTP_STATUS } from "@/constants/http-status";
+import { clearAccessToken, isAuthenticated } from "@/helpers/auth";
+import { queryClient } from "@/lib/query-client";
+import { getMeQueryOptions } from "@/queries/auth.queries";
 
 type LanguageRouteLoaderArgs = {
   params: { lang?: string };
@@ -31,12 +32,35 @@ export const guestOnlyLoader = ({params}: LanguageRouteLoaderArgs) => {
 };
 
 // Authenticated only loader to redirect to login if not authenticated
-export const authenticatedOnlyLoader = ({params}: LanguageRouteLoaderArgs) => {
+export const authenticatedOnlyLoader = async ({
+  params,
+}: LanguageRouteLoaderArgs) => {
+  const loginPath = localizedPath(ROUTES_PATHS.LOGIN, params.lang);
+
   if (!isAuthenticated()) {
-    return replace(localizedPath(ROUTES_PATHS.LOGIN, params.lang));
+    return replace(loginPath);
   }
 
-  return null;
+  try {
+    await queryClient.fetchQuery({
+      ...getMeQueryOptions,
+      retry: false,
+    });
+
+    return null;
+  } catch (error) {
+    if (
+      typeof error === "object" &&
+      error !== null &&
+      "status" in error &&
+      error.status === HTTP_STATUS.UNAUTHORIZED
+    ) {
+      clearAccessToken();
+      return replace(loginPath);
+    }
+
+    throw error;
+  }
 };
 
 // Language loader to change the language and redirect to the root path
