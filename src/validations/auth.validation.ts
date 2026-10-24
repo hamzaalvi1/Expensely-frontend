@@ -22,7 +22,7 @@ export const loginFormSchema = z.object({
       }),
     ),
 
-  [PASSWORD]: z.string().min(1, {
+  [PASSWORD]: z.string().trim().min(1, {
     error: () => i18n.t('auth.password-required'),
   }),
 });
@@ -48,11 +48,11 @@ export const signupFormSchema = z
         }),
       ),
 
-    [SIGNUP_PASSWORD]: z.string().min(1, {
+    [SIGNUP_PASSWORD]: z.string().trim().min(1, {
       error: () => i18n.t('auth.password-required'),
     }),
 
-    [SIGNUP_CONFIRM_PASSWORD]: z.string().min(1, {
+    [SIGNUP_CONFIRM_PASSWORD]: z.string().trim().min(1, {
       error: () => i18n.t('auth.confirm-password-required'),
     }),
   })

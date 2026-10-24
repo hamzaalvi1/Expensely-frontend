@@ -17,7 +17,7 @@ const { EMAIL, PASSWORD, REMEMBER_ME } = loginFields;
 
 const LoginForm = () => {
   const { t } = useTranslation();
-  const { formKey, getInputProps, handleLogin, handleFormSubmit } =
+  const { isLoggingInUser, formKey, getInputProps, handleLogin, handleFormSubmit } =
     useLoginFormController();
   return (
     <form onSubmit={handleFormSubmit(handleLogin)}>
@@ -44,7 +44,7 @@ const LoginForm = () => {
             {t('auth.forgot-password')}
           </Anchor>
         </Flex>
-        <Button type="submit" fullWidth>
+        <Button type="submit" fullWidth loading={isLoggingInUser}>
           {t('auth.sign-in')}
         </Button>
       </Stack>

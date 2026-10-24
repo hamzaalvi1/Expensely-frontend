@@ -7,8 +7,13 @@ const { NAME, EMAIL, PASSWORD, CONFIRM_PASSWORD } = signupFields;
 
 const SignupForm = () => {
   const { t } = useTranslation();
-  const { formKey, getInputProps, handleSignup, handleFormSubmit } =
-    useSignupFormController();
+  const {
+    isRegisteringUser,
+    formKey,
+    getInputProps,
+    handleSignup,
+    handleFormSubmit,
+  } = useSignupFormController();
   return (
     <form onSubmit={handleFormSubmit(handleSignup)}>
       <Stack gap="xs">
@@ -36,7 +41,7 @@ const SignupForm = () => {
           placeholder="••••••••"
           {...getInputProps(CONFIRM_PASSWORD)}
         />
-        <Button type="submit" fullWidth mt="sm">
+        <Button type="submit" fullWidth mt="sm" loading={isRegisteringUser}>
           {t('auth.sign-up')}
         </Button>
       </Stack>
