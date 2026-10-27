@@ -41,27 +41,6 @@ export const authenticatedOnlyLoader = async ({
     clearAccessToken();
     return replace(loginPath);
   }
-
-  // try {
-  //   await queryClient.fetchQuery({
-  //     ...getMeQueryOptions,
-  //     retry: false,
-  //   });
-
-  //   return null;
-  // } catch (error) {
-  //   if (
-  //     typeof error === "object" &&
-  //     error !== null &&
-  //     "status" in error &&
-  //     error.status === HTTP_STATUS.UNAUTHORIZED
-  //   ) {
-  //     clearAccessToken();
-  //     return replace(loginPath);
-  //   }
-
-  //   throw error;
-  // }
 };
 
 // Language loader to change the language and redirect to the root path
