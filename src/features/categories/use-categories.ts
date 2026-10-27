@@ -1,9 +1,16 @@
 import { useCallback, useState } from 'react';
 import { useDisclosure } from '@mantine/hooks';
+import { useTranslation } from 'react-i18next';
+
+import { successLogger } from '@/helpers/toast';
+import { useDeleteCategory } from '@/queries/categories.queries';
 
 import type { CategoryCardData } from './category-card/types';
 
 export const useCategories = () => {
+  const { t } = useTranslation();
+  const { mutateAsync: deleteCategoryMutation, isPending: isDeletingCategory } =
+    useDeleteCategory();
   const [categoryModalOpened, categoryModalHandlers] = useDisclosure(false);
   const [deleteModalOpened, deleteModalHandlers] = useDisclosure(false);
   const { open: openCategoryModal, close: closeCategoryModalDisclosure } =
@@ -44,6 +51,17 @@ export const useCategories = () => {
     setCategoryToDelete(null);
   }, [closeDeleteModal]);
 
+  const handleConfirmDelete = useCallback(async () => {
+    if (!categoryToDelete) return;
+
+    await deleteCategoryMutation(categoryToDelete.id, {
+      onSuccess: () => {
+        successLogger(t('categories.delete-modal.deleted-success'));
+        closeDeleteCategory();
+      },
+    });
+  }, [categoryToDelete, closeDeleteCategory, deleteCategoryMutation, t]);
+
   return {
     categoryModalOpened,
     categoryToEdit,
@@ -54,5 +72,7 @@ export const useCategories = () => {
     closeCategoryModal,
     openDeleteCategory,
     closeDeleteCategory,
+    handleConfirmDelete,
+    isDeletingCategory,
   };
 };

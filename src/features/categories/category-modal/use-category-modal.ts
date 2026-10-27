@@ -26,17 +26,12 @@ export const useCategoryModal = ({
   } = useUpdateCategory();
   const categoryForm = useCategoryForm({
     mode: 'uncontrolled',
-    initialValues: category
-      ? {
-          [categoryFormFields.NAME]: category.name,
-          [categoryFormFields.TYPE]: category.type,
-          [categoryFormFields.ICON]: category.icon,
-        }
-      : {
-          [categoryFormFields.NAME]: '',
-          [categoryFormFields.TYPE]: CATEGORY_TYPES.EXPENSE.toUpperCase(),
-          [categoryFormFields.ICON]: 'wallet',
-        },
+    initialValues: {
+      [categoryFormFields.NAME]: category?.name ?? '',
+      [categoryFormFields.TYPE]:
+        category?.type ?? CATEGORY_TYPES.EXPENSE.toUpperCase(),
+      [categoryFormFields.ICON]: category?.icon ?? 'wallet',
+    },
     validate: schemaResolver(categoryFormSchema),
   });
 
