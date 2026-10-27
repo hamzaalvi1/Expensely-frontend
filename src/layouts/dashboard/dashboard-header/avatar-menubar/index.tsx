@@ -15,10 +15,10 @@ const AvatarMenuBar = () => {
   const { t } = useTranslation();
   const navigate = useLocalizedNavigate();
   const { data: user } = useGetMe();
-  const handleLogout = () => {
+  const handleLogout = async () => {
     clearAccessToken();
+    await navigate(ROUTES_PATHS.LOGIN, { replace: true });
     queryClient.removeQueries({ queryKey: [AUTH_QUERY_KEYS.ME] });
-    navigate(ROUTES_PATHS.LOGIN, { replace: true });
   };
 
   const menuItems = [

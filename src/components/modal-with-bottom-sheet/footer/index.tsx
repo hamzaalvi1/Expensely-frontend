@@ -4,6 +4,7 @@ import { useMediaQuery } from '@/hooks/use-media-query';
 import type { ModalWithBottomSheetFooterProps } from '../types';
 
 const ModalWithBottomSheetFooter = ({
+  isLoading,
   cancelLabel,
   submitLabel,
   onCancel,
@@ -16,7 +17,7 @@ const ModalWithBottomSheetFooter = ({
       p="md"
       style={{ borderTop: '1px solid var(--app-color-neutral-border)' }}
     >
-      <Button type="submit" color="primary.5" fw={500} fullWidth={isMobile}>
+      <Button type="submit" color="primary.5" fw={500} fullWidth={isMobile} loading={isLoading}>
         {submitLabel}
       </Button>
       <Button

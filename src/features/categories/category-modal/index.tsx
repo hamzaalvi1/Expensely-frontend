@@ -7,7 +7,7 @@ import ModalWithBottomSheetHeader from '@/components/modal-with-bottom-sheet/hea
 import { categoryFormFields } from '@/constants/form-fields';
 import { CategoryFormProvider } from '@/context/category-form-context';
 
-import CategoryColorSelector from './category-color-selector';
+// import CategoryColorSelector from './category-color-selector';
 import CategoryIconSelector from './category-icon-selector';
 import CategoryModalFields from './category-modal-fields';
 import type { CategoryModalProps } from './types';
@@ -15,7 +15,7 @@ import { useCategoryModal } from './use-category-modal';
 
 const CategoryModal = ({ opened, onClose, onSubmit }: CategoryModalProps) => {
   const { t } = useTranslation();
-  const { categoryForm, handleClose, handleSubmit } = useCategoryModal({
+  const { isCreatingCategory, categoryForm, handleClose, handleSubmit } = useCategoryModal({
     onClose,
     onSubmit,
   });
@@ -38,10 +38,11 @@ const CategoryModal = ({ opened, onClose, onSubmit }: CategoryModalProps) => {
             <Stack gap="md" p="md">
               <CategoryModalFields />
               <CategoryIconSelector key={categoryForm.key(categoryFormFields.ICON)} />
-              <CategoryColorSelector key={categoryForm.key(categoryFormFields.COLOR)} />
+              {/* <CategoryColorSelector key={categoryForm.key(categoryFormFields.COLOR)} /> */}
             </Stack>
 
             <ModalWithBottomSheetFooter
+              isLoading={isCreatingCategory}
               cancelLabel={t('categories.modal.cancel')}
               submitLabel={t('categories.modal.save')}
               onCancel={handleClose}

@@ -25,8 +25,8 @@ const CategoryModalFields = () => {
         label={t('categories.modal.type')}
         labelProps={{ fz: 14, mb: 8 }}
         data={[
-          { value: CATEGORY_TYPES.EXPENSE, label: t('categories.modal.expense') },
-          { value: CATEGORY_TYPES.INCOME, label: t('categories.modal.income') },
+          { value: CATEGORY_TYPES.EXPENSE.toUpperCase(), label: t('categories.modal.expense') },
+          { value: CATEGORY_TYPES.INCOME.toUpperCase(), label: t('categories.modal.income') },
         ]}
         allowDeselect={false}
         checkIconPosition='right'

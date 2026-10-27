@@ -9,11 +9,13 @@ import { CATEGORY_TYPES } from '@/constants/category-types';
 import CategoryByList from './category-by-list';
 import CategoryModal from './category-modal';
 import { useCategories } from './use-categories';
-import { expenseCategories, incomeCategories } from '@/fixtures/categories';
 
 const Categories = () => {
   const { t } = useTranslation();
-  const { categoryModalOpened, categoryModalHandlers } = useCategories();
+  const {
+    categoryModalOpened,
+    categoryModalHandlers,
+  } = useCategories();
 
   return (
     <Stack>
@@ -46,12 +48,10 @@ const Categories = () => {
         <CategoryByList
           title="categories.income-categories"
           type={CATEGORY_TYPES.INCOME}
-          categories={incomeCategories}
         />
         <CategoryByList
           title="categories.expense-categories"
           type={CATEGORY_TYPES.EXPENSE}
-          categories={expenseCategories}
         />
       </Stack>
     </Stack>

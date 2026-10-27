@@ -9,15 +9,15 @@ export const categoryFormSchema = z.object({
     error: () => i18n.t('categories.modal.validation.name-required'),
   }),
   [categoryFormFields.TYPE]: z.enum([
-    CATEGORY_TYPES.INCOME,
-    CATEGORY_TYPES.EXPENSE,
+    CATEGORY_TYPES.INCOME.toUpperCase(),
+    CATEGORY_TYPES.EXPENSE.toUpperCase(),
   ]),
   [categoryFormFields.ICON]: z.string().min(1, {
     error: () => i18n.t('categories.modal.validation.icon-required'),
   }),
-  [categoryFormFields.COLOR]: z.string().min(1, {
-    error: () => i18n.t('categories.modal.validation.color-required'),
-  }),
+  // [categoryFormFields.COLOR]: z.string().min(1, {
+  //   error: () => i18n.t('categories.modal.validation.color-required'),
+  // }),
 });
 
 export type CategoryFormValues = z.infer<typeof categoryFormSchema>;
