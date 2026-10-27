@@ -10,3 +10,9 @@ export interface CategoryByListProps {
   onEditCategory?: (category: CategoryCardData) => void;
   onDeleteCategory?: (category: CategoryCardData) => void;
 }
+
+export interface CategoryByListContentProps {
+  type: CategoryType;
+  onEditCategory?: (category: CategoryCardData) => void;
+  onDeleteCategory?: (category: CategoryCardData) => void;
+}
