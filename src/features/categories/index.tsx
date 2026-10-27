@@ -8,12 +8,24 @@ import { CATEGORY_TYPES } from '@/constants/category-types';
 
 import CategoryByList from './category-by-list';
 import CategoryModal from './category-modal';
+import DeleteCategoryModal from './delete-category-modal';
 import { useCategories } from './use-categories';
-import { expenseCategories, incomeCategories } from '@/fixtures/categories';
 
 const Categories = () => {
   const { t } = useTranslation();
-  const { categoryModalOpened, categoryModalHandlers } = useCategories();
+  const {
+    categoryModalOpened,
+    categoryToEdit,
+    deleteModalOpened,
+    categoryToDelete,
+    openCreateCategory,
+    openEditCategory,
+    closeCategoryModal,
+    openDeleteCategory,
+    closeDeleteCategory,
+    handleConfirmDelete,
+    isDeletingCategory,
+  } = useCategories();
 
   return (
     <Stack>
@@ -33,27 +45,37 @@ const Categories = () => {
         />
         <AddButton
           label={t('categories.add-category')}
-          handleClick={categoryModalHandlers.open}
+          handleClick={openCreateCategory}
         />
       </Flex>
-
-      <CategoryModal
-        opened={categoryModalOpened}
-        onClose={categoryModalHandlers.close}
-      />
 
       <Stack gap="xl">
         <CategoryByList
           title="categories.income-categories"
           type={CATEGORY_TYPES.INCOME}
-          categories={incomeCategories}
+          onEditCategory={openEditCategory}
+          onDeleteCategory={openDeleteCategory}
         />
         <CategoryByList
           title="categories.expense-categories"
           type={CATEGORY_TYPES.EXPENSE}
-          categories={expenseCategories}
+          onEditCategory={openEditCategory}
+          onDeleteCategory={openDeleteCategory}
         />
       </Stack>
+      <CategoryModal
+        key={categoryToEdit?.id ?? 'new-category'}
+        opened={categoryModalOpened}
+        category={categoryToEdit}
+        onClose={closeCategoryModal}
+      />
+      <DeleteCategoryModal
+        opened={deleteModalOpened}
+        category={categoryToDelete}
+        isDeleting={isDeletingCategory}
+        onClose={closeDeleteCategory}
+        onConfirm={handleConfirmDelete}
+      />
     </Stack>
   );
 };

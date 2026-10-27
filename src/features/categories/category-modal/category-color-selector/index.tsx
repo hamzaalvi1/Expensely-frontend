@@ -10,13 +10,13 @@ import { useCategoryModalFormContext } from '@/context/category-form-context';
 const CategoryColorSelector = () => {
   const { t } = useTranslation();
   const categoryFormContext = useCategoryModalFormContext();
-  const [selectedColor, setSelectedColor] = useState(
-    categoryFormContext.getValues()[categoryFormFields.COLOR]
+  const [selectedColor, _] = useState(
+    // categoryFormContext.getValues()[categoryFormFields.COLOR]
   );
 
   const handleColorChange = (color: string, checked: boolean) => {
     if (!checked) return;
-    setSelectedColor(color);
+    // setSelectedColor(color);
     categoryFormContext.setFieldValue(categoryFormFields.COLOR, color);
   };
 

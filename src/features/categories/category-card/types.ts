@@ -1,12 +1,15 @@
-import type { ReactNode } from 'react';
+import type { CATEGORY_TYPES } from '@/constants/category-types';
 
 export interface CategoryCardData {
   id: string;
   name: string;
-  icon: ReactNode;
+  type: keyof typeof CATEGORY_TYPES;
+  icon: string;
   isDefault?: boolean;
 }
 
 export interface CategoryCardProps {
   category: CategoryCardData;
+  onEdit?: (category: CategoryCardData) => void;
+  onDelete?: (category: CategoryCardData) => void;
 }

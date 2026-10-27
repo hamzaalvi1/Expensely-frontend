@@ -228,9 +228,24 @@
     "add-category": "إضافة فئة",
     "expense-categories": "فئات المصروفات",
     "income-categories": "فئات الدخل",
+    "actions": {
+      "edit": "تعديل الفئة",
+      "delete": "حذف الفئة"
+    },
+    "delete-modal": {
+      "title": "حذف هذه الفئة؟",
+      "description": "هل أنت متأكد أنك تريد حذف «{{category}}»؟ لا يمكن التراجع عن هذا الإجراء.",
+      "related-data-warning": "سيؤدي حذف هذه الفئة أيضًا إلى حذف معاملاتها وميزانياتها نهائيًا.",
+      "close": "إغلاق تأكيد الحذف",
+      "cancel": "إلغاء",
+      "confirm": "حذف",
+      "deleted-success": "تم حذف الفئة بنجاح"
+    },
     "modal": {
       "title": "فئة جديدة",
       "description": "أنشئ فئة مخصصة لتتبع معاملاتك.",
+      "edit-title": "تعديل الفئة",
+      "edit-description": "حدّث تفاصيل هذه الفئة.",
       "close": "إغلاق",
       "name": "اسم الفئة",
       "name-placeholder": "مثال: الاشتراكات",
@@ -271,7 +286,10 @@
         "gray": "رمادي"
       },
       "cancel": "إلغاء",
-      "save": "حفظ الفئة"
+      "save": "حفظ الفئة",
+      "update": "تحديث الفئة",
+      "created-success": "تم إنشاء الفئة بنجاح",
+      "updated-success": "تم تحديث الفئة بنجاح"
     }
   },
   "budgets": {

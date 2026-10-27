@@ -5,10 +5,10 @@ import type { SupportedLanguage } from "@/types/commons";
 import { isSupportedLanguage } from "@/helpers/supported-lang";
 import { localizedPath } from "@/helpers/localize-path";
 import { DEFAULT_LANGUAGE } from "@/constants/lang";
-import { HTTP_STATUS } from "@/constants/http-status";
+// import { HTTP_STATUS } from "@/constants/http-status";
 import { clearAccessToken, isAuthenticated } from "@/helpers/auth";
-import { queryClient } from "@/lib/query-client";
-import { getMeQueryOptions } from "@/queries/auth.queries";
+// import { queryClient } from "@/lib/query-client";
+// import { getMeQueryOptions } from "@/queries/auth.queries";
 
 type LanguageRouteLoaderArgs = {
   params: { lang?: string };
@@ -38,28 +38,8 @@ export const authenticatedOnlyLoader = async ({
   const loginPath = localizedPath(ROUTES_PATHS.LOGIN, params.lang);
 
   if (!isAuthenticated()) {
+    clearAccessToken();
     return replace(loginPath);
-  }
-
-  try {
-    await queryClient.fetchQuery({
-      ...getMeQueryOptions,
-      retry: false,
-    });
-
-    return null;
-  } catch (error) {
-    if (
-      typeof error === "object" &&
-      error !== null &&
-      "status" in error &&
-      error.status === HTTP_STATUS.UNAUTHORIZED
-    ) {
-      clearAccessToken();
-      return replace(loginPath);
-    }
-
-    throw error;
   }
 };
 

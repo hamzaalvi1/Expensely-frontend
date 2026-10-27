@@ -15,6 +15,7 @@ export interface ModalWithBottomSheetHeaderProps {
 }
 
 export interface ModalWithBottomSheetFooterProps {
+  isLoading?: boolean;
   cancelLabel: string;
   submitLabel: string;
   onCancel: () => void;

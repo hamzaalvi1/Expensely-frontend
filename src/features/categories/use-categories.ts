@@ -1,12 +1,78 @@
-import { useDisclosure } from "@mantine/hooks"
+import { useCallback, useState } from 'react';
+import { useDisclosure } from '@mantine/hooks';
+import { useTranslation } from 'react-i18next';
+
+import { successLogger } from '@/helpers/toast';
+import { useDeleteCategory } from '@/queries/categories.queries';
+
+import type { CategoryCardData } from './category-card/types';
 
 export const useCategories = () => {
+  const { t } = useTranslation();
+  const { mutateAsync: deleteCategoryMutation, isPending: isDeletingCategory } =
+    useDeleteCategory();
   const [categoryModalOpened, categoryModalHandlers] = useDisclosure(false);
+  const [deleteModalOpened, deleteModalHandlers] = useDisclosure(false);
+  const { open: openCategoryModal, close: closeCategoryModalDisclosure } =
+    categoryModalHandlers;
+  const { open: openDeleteModal, close: closeDeleteModal } =
+    deleteModalHandlers;
+  const [categoryToEdit, setCategoryToEdit] = useState<CategoryCardData | null>(
+    null,
+  );
+  const [categoryToDelete, setCategoryToDelete] =
+    useState<CategoryCardData | null>(null);
 
-  return (
-    {
-      categoryModalOpened,
-      categoryModalHandlers,
-    }
-  )
-}
+  const openCreateCategory = useCallback(() => {
+    setCategoryToEdit(null);
+    openCategoryModal();
+  }, [openCategoryModal]);
+
+  const openEditCategory = useCallback((category: CategoryCardData) => {
+    setCategoryToEdit(category);
+    openCategoryModal();
+  }, [openCategoryModal]);
+
+  const closeCategoryModal = useCallback(() => {
+    closeCategoryModalDisclosure();
+    setCategoryToEdit(null);
+  }, [closeCategoryModalDisclosure]);
+
+  const openDeleteCategory = useCallback(
+    (category: CategoryCardData) => {
+      setCategoryToDelete(category);
+      openDeleteModal();
+    },
+    [openDeleteModal],
+  );
+
+  const closeDeleteCategory = useCallback(() => {
+    closeDeleteModal();
+    setCategoryToDelete(null);
+  }, [closeDeleteModal]);
+
+  const handleConfirmDelete = useCallback(async () => {
+    if (!categoryToDelete) return;
+
+    await deleteCategoryMutation(categoryToDelete.id, {
+      onSuccess: () => {
+        successLogger(t('categories.delete-modal.deleted-success'));
+        closeDeleteCategory();
+      },
+    });
+  }, [categoryToDelete, closeDeleteCategory, deleteCategoryMutation, t]);
+
+  return {
+    categoryModalOpened,
+    categoryToEdit,
+    deleteModalOpened,
+    categoryToDelete,
+    openCreateCategory,
+    openEditCategory,
+    closeCategoryModal,
+    openDeleteCategory,
+    closeDeleteCategory,
+    handleConfirmDelete,
+    isDeletingCategory,
+  };
+};

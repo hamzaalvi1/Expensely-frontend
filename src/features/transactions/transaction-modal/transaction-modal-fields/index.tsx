@@ -13,7 +13,7 @@ import { useTranslation } from 'react-i18next';
 import { CATEGORY_TYPES, type CategoryType } from '@/constants/category-types';
 import { transactionFormFields } from '@/constants/form-fields';
 import { useTransactionModalFormContext } from '@/context/transaction-form-context';
-import { expenseCategories, incomeCategories } from '@/fixtures/categories';
+import { defaultCategories } from '@/fixtures/categories';
 
 import { datePickerStyles } from '../styled';
 
@@ -34,10 +34,9 @@ const TransactionModalFields = () => {
 
   form.watch(transactionFormFields.TYPE, handleTypeChange);
 
-  const categories =
-    transactionType === CATEGORY_TYPES.INCOME
-      ? incomeCategories
-      : expenseCategories;
+  const categories = defaultCategories.filter(
+    category => category.type === transactionType.toUpperCase(),
+  );
 
   return (
     <Stack gap="md" p="md">
