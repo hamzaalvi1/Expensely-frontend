@@ -226,9 +226,24 @@
     "add-category": "Add Category",
     "expense-categories": "Expense Categories",
     "income-categories": "Income Categories",
+    "actions": {
+      "edit": "Edit category",
+      "delete": "Delete category"
+    },
+    "delete-modal": {
+      "title": "Delete this category?",
+      "description": "Are you sure you want to delete “{{category}}”? This action cannot be undone.",
+      "related-data-warning": "Deleting this category will also permanently delete its transactions and budgets.",
+      "close": "Close delete confirmation",
+      "cancel": "Cancel",
+      "confirm": "Delete",
+      "deleted-success": "Category deleted successfully"
+    },
     "modal": {
       "title": "New Category",
       "description": "Create a custom category to track your transactions.",
+      "edit-title": "Edit Category",
+      "edit-description": "Update this category's details.",
       "close": "Close",
       "name": "Category Name",
       "name-placeholder": "e.g., Subscriptions",
@@ -269,7 +284,10 @@
         "gray": "Gray"
       },
       "cancel": "Cancel",
-      "save": "Save Category"
+      "save": "Save Category",
+      "update": "Update Category",
+      "created-success": "Category created successfully",
+      "updated-success": "Category updated successfully"
     }
   },
   "budgets": {

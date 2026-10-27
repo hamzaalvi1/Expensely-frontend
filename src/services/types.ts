@@ -64,3 +64,8 @@ export interface CreateCategoryRequest {
   icon: string;
   type: Uppercase<CategoryType>;
 }
+
+export interface UpdateCategoryVariables {
+  categoryId: string;
+  category: CreateCategoryRequest;
+}

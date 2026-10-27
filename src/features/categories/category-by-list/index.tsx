@@ -8,7 +8,12 @@ import { isExpense, isIncome } from '@/helpers/transaction-type';
 
 import type { CategoryByListProps } from './types';
 
-const CategoryByList = ({ title, type }: CategoryByListProps) => {
+const CategoryByList = ({
+  title,
+  type,
+  onEditCategory,
+  onDeleteCategory,
+}: CategoryByListProps) => {
   const { t } = useTranslation();
   const income = isIncome(type);
   const expense = isExpense(type);
@@ -28,7 +33,11 @@ const CategoryByList = ({ title, type }: CategoryByListProps) => {
         </Text>
       </Flex>
       <Divider />
-      <CategoryByListContent type={type} />
+      <CategoryByListContent
+        type={type}
+        onEditCategory={onEditCategory}
+        onDeleteCategory={onDeleteCategory}
+      />
     </Stack>
   );
 };

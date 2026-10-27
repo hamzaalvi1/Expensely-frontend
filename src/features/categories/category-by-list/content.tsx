@@ -8,7 +8,14 @@ import type { CategoryByListProps } from './types';
 import withAsyncBoundary from '@/hoc/with-async-boundary';
 import { useGetCategories } from '@/queries/categories.queries';
 
-const CategoryByListContent = ({ type }: Pick<CategoryByListProps, 'type'>) => {
+const CategoryByListContent = ({
+  type,
+  onEditCategory,
+  onDeleteCategory,
+}: Pick<
+  CategoryByListProps,
+  'type' | 'onEditCategory' | 'onDeleteCategory'
+>) => {
   const { data: categories } = useGetCategories();
   const filteredCategories = categories.data.filter(
     category => category.type === type.toUpperCase(),
@@ -18,7 +25,11 @@ const CategoryByListContent = ({ type }: Pick<CategoryByListProps, 'type'>) => {
     <Grid gap="lg">
       {filteredCategories.map(category => (
         <Grid.Col key={category.id} span={{ base: 12, sm: 6, md: 4, lg: 3 }}>
-          <CategoryCard category={category} />
+          <CategoryCard
+            category={category}
+            onEdit={onEditCategory}
+            onDelete={onDeleteCategory}
+          />
         </Grid.Col>
       ))}
     </Grid>

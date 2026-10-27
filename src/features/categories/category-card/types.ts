@@ -10,4 +10,6 @@ export interface CategoryCardData {
 
 export interface CategoryCardProps {
   category: CategoryCardData;
+  onEdit?: (category: CategoryCardData) => void;
+  onDelete?: (category: CategoryCardData) => void;
 }

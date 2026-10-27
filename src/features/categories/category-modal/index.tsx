@@ -13,12 +13,10 @@ import CategoryModalFields from './category-modal-fields';
 import type { CategoryModalProps } from './types';
 import { useCategoryModal } from './use-category-modal';
 
-const CategoryModal = ({ opened, onClose, onSubmit }: CategoryModalProps) => {
+const CategoryModal = ({ opened, onClose, category }: CategoryModalProps) => {
   const { t } = useTranslation();
-  const { isCreatingCategory, categoryForm, handleClose, handleSubmit } = useCategoryModal({
-    onClose,
-    onSubmit,
-  });
+  const { isSaving, categoryForm, handleClose, handleSubmit } =
+    useCategoryModal({ onClose, category });
 
   return (
     <ModalWithBottomSheet
@@ -28,8 +26,16 @@ const CategoryModal = ({ opened, onClose, onSubmit }: CategoryModalProps) => {
       <CategoryFormProvider form={categoryForm}>
         <Stack gap={0}>
           <ModalWithBottomSheetHeader
-            title={t('categories.modal.title')}
-            description={t('categories.modal.description')}
+            title={t(
+              category
+                ? 'categories.modal.edit-title'
+                : 'categories.modal.title',
+            )}
+            description={t(
+              category
+                ? 'categories.modal.edit-description'
+                : 'categories.modal.description',
+            )}
             closeLabel={t('categories.modal.close')}
             onClose={handleClose}
           />
@@ -42,9 +48,13 @@ const CategoryModal = ({ opened, onClose, onSubmit }: CategoryModalProps) => {
             </Stack>
 
             <ModalWithBottomSheetFooter
-              isLoading={isCreatingCategory}
+              isLoading={isSaving}
               cancelLabel={t('categories.modal.cancel')}
-              submitLabel={t('categories.modal.save')}
+              submitLabel={t(
+                category
+                  ? 'categories.modal.update'
+                  : 'categories.modal.save',
+              )}
               onCancel={handleClose}
             />
           </form>
