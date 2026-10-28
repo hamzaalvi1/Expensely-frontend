@@ -1,43 +1,50 @@
 import {
-  Badge,
-  Box,
-  Chip,
-  Flex,
+  Grid,
   NumberInput,
-  SegmentedControl,
   Select,
-  SimpleGrid,
   Stack,
-  Text,
+  TextInput,
+  Textarea,
 } from '@mantine/core';
+import { DatePickerInput } from '@mantine/dates';
 import { useTranslation } from 'react-i18next';
 import { FaDollarSign, FaTags } from 'react-icons/fa6';
 
-import { BUDGET_ALERT_THRESHOLDS, BUDGET_CYCLES } from '@/constants/budget';
 import { budgetFormFields } from '@/constants/form-fields';
 import { useBudgetModalFormContext } from '@/context/budget-form-context';
-import { budgetConfigs } from '@/features/budgets/budget-config';
-import type { BudgetModalFieldsProps } from '../types';
-import { getAlertThresholdChipStyles, notifyBadgeStyles } from './styled';
+
+interface BudgetModalFieldsProps {
+  expenseCategoryOptions: { value: string; label: string }[];
+  isLoadingCategories: boolean;
+  isEditing: boolean;
+}
 
 const BudgetModalFields = ({
-  onAlertThresholdChange,
+  expenseCategoryOptions,
+  isLoadingCategories,
+  isEditing,
 }: BudgetModalFieldsProps) => {
   const { t } = useTranslation();
   const form = useBudgetModalFormContext();
-  const alertThreshold = form.values[budgetFormFields.ALERT_THRESHOLD];
 
   return (
     <Stack gap="lg" p="md">
+      <TextInput
+        {...form.getInputProps(budgetFormFields.NAME)}
+        label={t('budgets.modal.name')}
+        labelProps={{ fz: 14, mb: 8 }}
+        placeholder={t('budgets.modal.name-placeholder')}
+        maxLength={50}
+      />
+
       <Select
-        {...form.getInputProps(budgetFormFields.CATEGORY)}
+        {...form.getInputProps(budgetFormFields.CATEGORY_ID)}
         label={t('budgets.modal.category')}
         labelProps={{ fz: 14, mb: 8 }}
         placeholder={t('budgets.modal.category-placeholder')}
-        data={budgetConfigs.map(budget => ({
-          value: budget.id,
-          label: t(budget.categoryKey),
-        }))}
+        data={expenseCategoryOptions}
+        loading={isLoadingCategories}
+        disabled={isLoadingCategories || isEditing}
         allowDeselect={false}
         leftSection={
           <FaTags
@@ -53,8 +60,8 @@ const BudgetModalFields = ({
       />
 
       <NumberInput
-        {...form.getInputProps(budgetFormFields.LIMIT)}
-        label={t('budgets.modal.monthly-limit')}
+        {...form.getInputProps(budgetFormFields.AMOUNT)}
+        label={t('budgets.modal.amount')}
         labelProps={{ fz: 14, mb: 8 }}
         placeholder="0.00"
         leftSection={
@@ -64,77 +71,50 @@ const BudgetModalFields = ({
             aria-hidden
           />
         }
+        allowNegative={false}
         decimalScale={2}
         min={0}
         hideControls
       />
 
-      <Box>
-        <Text fz={14} fw={500} mb={8}>
-          {t('budgets.modal.cycle')}
-        </Text>
+      <Grid>
+        <Grid.Col span={{ base: 12, sm: 6 }}>
+          <DatePickerInput
+            value={form.values[budgetFormFields.START_DATE] || null}
+            onChange={value =>
+              form.setFieldValue(budgetFormFields.START_DATE, value ?? '')
+            }
+            onBlur={form.getInputProps(budgetFormFields.START_DATE).onBlur}
+            error={form.errors[budgetFormFields.START_DATE]}
+            label={t('budgets.modal.start-date')}
+            placeholder={t('budgets.modal.start-date-placeholder')}
+            labelProps={{ fz: 14, mb: 8 }}
+          />
+        </Grid.Col>
+        <Grid.Col span={{ base: 12, sm: 6 }}>
+          <DatePickerInput
+            value={form.values[budgetFormFields.END_DATE] || null}
+            onChange={value =>
+              form.setFieldValue(budgetFormFields.END_DATE, value ?? '')
+            }
+            onBlur={form.getInputProps(budgetFormFields.END_DATE).onBlur}
+            error={form.errors[budgetFormFields.END_DATE]}
+            label={t('budgets.modal.end-date')}
+            placeholder={t('budgets.modal.end-date-placeholder')}
+            labelProps={{ fz: 14, mb: 8 }}
+            minDate={form.values[budgetFormFields.START_DATE] || undefined}
+          />
+        </Grid.Col>
+      </Grid>
 
-        <SegmentedControl
-          fullWidth
-          data={[
-            {
-              value: BUDGET_CYCLES.MONTHLY,
-              label: t('budgets.modal.monthly-cycle'),
-            },
-            {
-              value: BUDGET_CYCLES.WEEKLY,
-              label: t('budgets.modal.weekly-cycle'),
-            },
-          ]}
-          {...form.getInputProps(budgetFormFields.CYCLE)}
-        />
-      </Box>
-
-      <Box>
-        <Flex justify="space-between" align="center" mb={8}>
-          <Text fz={14} fw={500}>
-            {t('budgets.modal.alert-threshold')}
-          </Text>
-          <Badge
-            variant="light"
-            color="primary.5"
-            radius="xl"
-            styles={notifyBadgeStyles}
-          >
-            {t('budgets.modal.notify-at', { threshold: alertThreshold })}
-          </Badge>
-        </Flex>
-
-        <Chip.Group
-          value={alertThreshold}
-          onChange={onAlertThresholdChange}
-        >
-          <SimpleGrid cols={BUDGET_ALERT_THRESHOLDS.length} spacing="xs">
-            {BUDGET_ALERT_THRESHOLDS.map(threshold => (
-              <Chip
-                key={threshold}
-                value={threshold}
-                type="radio"
-                variant="outline"
-                color="primary.5"
-                radius="sm"
-                size="md"
-                w="100%"
-                icon={null}
-                styles={getAlertThresholdChipStyles(
-                  alertThreshold === threshold,
-                )}
-              >
-                {threshold}%
-              </Chip>
-            ))}
-          </SimpleGrid>
-        </Chip.Group>
-
-        <Text c="dimmed" fz="xs" mt="xs">
-          {t('budgets.modal.alert-helper')}
-        </Text>
-      </Box>
+      <Textarea
+        {...form.getInputProps(budgetFormFields.DESCRIPTION)}
+        label={t('budgets.modal.description-label')}
+        labelProps={{ fz: 14, mb: 8 }}
+        placeholder={t('budgets.modal.description-placeholder')}
+        autosize
+        minRows={2}
+      />
     </Stack>
   );
 };

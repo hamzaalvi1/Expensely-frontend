@@ -1,5 +1,5 @@
 import { CATEGORIES_QUERY_KEYS } from '@/constants/query-keys';
-import { useMutation, useSuspenseQuery } from '@tanstack/react-query';
+import { useMutation, useQuery, useSuspenseQuery } from '@tanstack/react-query';
 
 import {
   createCategory,
@@ -9,12 +9,16 @@ import {
 } from '@/services/categories.service';
 import { queryClient } from '@/lib/query-client';
 
-export const useGetCategories = () => {
-  return useSuspenseQuery({
-    queryKey: [CATEGORIES_QUERY_KEYS.ALL],
-    queryFn: getCategories,
-  });
+const categoriesQueryOptions = {
+  queryKey: [CATEGORIES_QUERY_KEYS.ALL],
+  queryFn: getCategories,
 };
+
+export const useGetCategories = () => {
+  return useSuspenseQuery(categoriesQueryOptions);
+};
+
+export const useGetCategoriesQuery = () => useQuery(categoriesQueryOptions);
 
 export const useCreateCategory = () => {
   return useMutation({

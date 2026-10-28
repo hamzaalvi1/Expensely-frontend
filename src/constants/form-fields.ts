@@ -28,8 +28,10 @@ export const transactionFormFields = {
 } as const;
 
 export const budgetFormFields = {
-    CATEGORY: "category",
-    LIMIT: "limit",
-    CYCLE: "cycle",
-    ALERT_THRESHOLD: "alertThreshold"
+  NAME: 'name',
+  CATEGORY_ID: 'categoryId',
+  AMOUNT: 'amount',
+  START_DATE: 'startDate',
+  END_DATE: 'endDate',
+  DESCRIPTION: 'description',
 } as const;

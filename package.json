@@ -15,8 +15,10 @@
     "generate:icons": "svgr --out-dir src/assets/icons --ext tsx src/assets/svg-source"
   },
   "dependencies": {
+    "@date-fns/utc": "^2.1.1",
     "@mantine/charts": "^9.5.1",
     "@mantine/core": "^9.5.1",
+    "@mantine/dates": "9.5.1",
     "@mantine/form": "^9.5.1",
     "@mantine/hooks": "^9.5.1",
     "@mantine/notifications": "9.5.1",
@@ -24,6 +26,7 @@
     "@tanstack/react-query-devtools": "^5.101.4",
     "@tanstack/react-table": "^9.2.4",
     "axios": "^1.20.0",
+    "date-fns": "^4.4.0",
     "i18next": "^26.3.6",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",

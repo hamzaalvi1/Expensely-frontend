@@ -7,5 +7,7 @@ export interface BudgetCardHeaderProps {
   statusLabel: ReactNode;
   statusColor: MantineColor;
   editLabel: string;
+  deleteLabel: string;
   onEdit?: () => void;
+  onDelete?: () => void;
 }

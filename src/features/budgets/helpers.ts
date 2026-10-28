@@ -1,4 +1,4 @@
-import type { BudgetCardProps } from './budget-card/types';
+import type { MantineColor } from '@mantine/core';
 
 export const calculatePercentage = (value: number, limit: number) =>
   limit > 0 ? (value / limit) * 100 : 0;
@@ -9,9 +9,40 @@ export const clampPercentage = (percentage: number) =>
 export const isBudgetAtLimit = (value: number, limit: number) =>
   limit > 0 && value >= limit;
 
-export const getStatusBadgeStyles = (
-  statusColor: BudgetCardProps['statusColor'],
-) => {
+export const getBudgetProgressColor = (percentage: number) => {
+  switch (true) {
+    case percentage >= 100:
+      return 'danger.5';
+    case percentage >= 75:
+      return 'warning.5';
+    case percentage >= 50:
+      return 'primary.5';
+    default:
+      return 'info.5';
+  }
+};
+
+export const getBudgetStatus = (percentage: number) => {
+  switch (true) {
+    case percentage >= 100:
+      return {
+        labelKey: 'budgets.status.over-budget',
+        color: 'danger.5',
+      };
+    case percentage >= 75:
+      return {
+        labelKey: 'budgets.status.watch-spending',
+        color: 'warning.5',
+      };
+    default:
+      return {
+        labelKey: 'budgets.status.on-track',
+        color: 'primary.4',
+      };
+  }
+};
+
+export const getStatusBadgeStyles = (statusColor: MantineColor) => {
   switch (statusColor) {
     case 'primary.4':
       return {

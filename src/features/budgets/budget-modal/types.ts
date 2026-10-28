@@ -1,16 +1,12 @@
-import type { BudgetFormValues } from '@/validations/budget.validation';
+import type { BudgetItem } from '@/services/types';
 
 export interface BudgetModalProps {
   opened: boolean;
   onClose: () => void;
-  onSubmit?: (values: BudgetFormValues) => void;
-}
-
-export interface BudgetModalFieldsProps {
-  onAlertThresholdChange: (value: string) => void;
+  budget?: BudgetItem | null;
 }
 
 export interface UseBudgetModalOptions {
   onClose: () => void;
-  onSubmit?: (values: BudgetFormValues) => void;
+  budget?: BudgetItem | null;
 }

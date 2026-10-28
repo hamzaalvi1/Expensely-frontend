@@ -292,11 +292,19 @@
   },
   "budgets": {
     "title": "Budgets",
-    "description": "Track your spending against your monthly limits.",
+    "description": "Track your spending against your budgets.",
     "add-budget": "Add Budget",
     "error": {
       "title": "Budgets could not be loaded",
       "description": "Please try again later."
+    },
+    "delete-modal": {
+      "title": "Delete this budget?",
+      "description": "Are you sure you want to delete ‘{{budget}}’? This action cannot be undone.",
+      "close": "Close",
+      "cancel": "Cancel",
+      "confirm": "Delete",
+      "deleted-success": "Budget deleted successfully"
     },
     "categories": {
       "food-and-dining": "Food & Dining",
@@ -320,22 +328,34 @@
     },
     "modal": {
       "title": "Create Budget",
-      "description": "Set monthly spending limits and track your targets.",
+      "edit-title": "Edit Budget",
+      "description": "Set a spending budget for a date range and track your target.",
       "close": "Close",
+      "name": "Title",
+      "name-placeholder": "e.g. Monthly groceries",
       "category": "Category",
       "category-placeholder": "Select a category",
-      "monthly-limit": "Monthly Limit",
-      "cycle": "Budget Cycle",
-      "monthly-cycle": "Monthly (Resets 1st)",
-      "weekly-cycle": "Weekly",
-      "alert-threshold": "Alert Threshold",
-      "notify-at": "Notify at {{threshold}}%",
-      "alert-helper": "Receive push & email notifications before exceeding category caps.",
+      "amount": "Budget Amount",
+      "start-date": "Start Date",
+      "start-date-placeholder": "Choose a start date",
+      "end-date": "End Date",
+      "end-date-placeholder": "Choose an end date",
+      "description-label": "Description",
+      "description-placeholder": "Describe what this budget is for",
       "cancel": "Cancel",
       "save": "Create Budget",
+      "update": "Update Budget",
+      "created-success": "Budget created successfully",
+      "updated-success": "Budget updated successfully",
       "validation": {
+        "name": "Enter a title",
+        "name-max": "Title must be 50 characters or fewer",
         "category": "Choose a category",
-        "limit": "Enter a limit greater than zero"
+        "amount": "Enter an amount greater than zero",
+        "start-date": "Choose a start date",
+        "end-date": "Choose an end date",
+        "date-range": "End date must be on or after the start date",
+        "description": "Enter a description"
       }
     }
   }

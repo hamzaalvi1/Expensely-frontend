@@ -10,14 +10,17 @@ import BudgetModalFields from './budget-modal-fields';
 import type { BudgetModalProps } from './types';
 import { useBudgetModal } from './use-budget-modal';
 
-const BudgetModal = ({ opened, onClose, onSubmit }: BudgetModalProps) => {
+const BudgetModal = ({ opened, onClose, budget }: BudgetModalProps) => {
   const { t } = useTranslation();
   const {
     budgetForm,
-    handleAlertThresholdChange,
+    expenseCategoryOptions,
+    isLoadingCategories,
+    isEditing,
+    isSavingBudget,
     handleClose,
     handleSubmit,
-  } = useBudgetModal({ onClose, onSubmit });
+  } = useBudgetModal({ onClose, budget });
 
   return (
     <ModalWithBottomSheet
@@ -28,7 +31,11 @@ const BudgetModal = ({ opened, onClose, onSubmit }: BudgetModalProps) => {
       <BudgetFormProvider form={budgetForm}>
         <Stack gap={0}>
           <ModalWithBottomSheetHeader
-            title={t('budgets.modal.title')}
+            title={
+              isEditing
+                ? t('budgets.modal.edit-title')
+                : t('budgets.modal.title')
+            }
             description={t('budgets.modal.description')}
             closeLabel={t('budgets.modal.close')}
             onClose={handleClose}
@@ -36,11 +43,18 @@ const BudgetModal = ({ opened, onClose, onSubmit }: BudgetModalProps) => {
 
           <form onSubmit={handleSubmit}>
             <BudgetModalFields
-              onAlertThresholdChange={handleAlertThresholdChange}
+              expenseCategoryOptions={expenseCategoryOptions}
+              isLoadingCategories={isLoadingCategories}
+              isEditing={isEditing}
             />
             <ModalWithBottomSheetFooter
+              isLoading={isSavingBudget}
               cancelLabel={t('budgets.modal.cancel')}
-              submitLabel={t('budgets.modal.save')}
+              submitLabel={
+                isEditing
+                  ? t('budgets.modal.update')
+                  : t('budgets.modal.save')
+              }
               onCancel={handleClose}
             />
           </form>
