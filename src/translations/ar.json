@@ -294,11 +294,19 @@
   },
   "budgets": {
     "title": "الميزانيات",
-    "description": "تابع إنفاقك مقارنة بالحدود الشهرية.",
+    "description": "تابع إنفاقك مقارنة بميزانياتك.",
     "add-budget": "إضافة ميزانية",
     "error": {
       "title": "تعذر تحميل الميزانيات",
       "description": "يرجى المحاولة مرة أخرى لاحقًا."
+    },
+    "delete-modal": {
+      "title": "هل تريد حذف هذه الميزانية؟",
+      "description": "هل أنت متأكد من حذف ‘{{budget}}’؟ لا يمكن التراجع عن هذا الإجراء.",
+      "close": "إغلاق",
+      "cancel": "إلغاء",
+      "confirm": "حذف",
+      "deleted-success": "تم حذف الميزانية بنجاح"
     },
     "categories": {
       "food-and-dining": "الطعام والمطاعم",
@@ -322,22 +330,34 @@
     },
     "modal": {
       "title": "إنشاء ميزانية",
-      "description": "حدد حدود الإنفاق الشهرية وتابع أهدافك.",
+      "edit-title": "تعديل الميزانية",
+      "description": "حدد ميزانية إنفاق لفترة زمنية وتابع هدفك.",
       "close": "إغلاق",
+      "name": "العنوان",
+      "name-placeholder": "مثال: ميزانية البقالة الشهرية",
       "category": "الفئة",
       "category-placeholder": "اختر فئة",
-      "monthly-limit": "الحد الشهري",
-      "cycle": "دورة الميزانية",
-      "monthly-cycle": "شهريًا (تجديد في اليوم الأول)",
-      "weekly-cycle": "أسبوعيًا",
-      "alert-threshold": "حد التنبيه",
-      "notify-at": "إشعار عند {{threshold}}٪",
-      "alert-helper": "استلم إشعارات قبل تجاوز حدود الفئة.",
+      "amount": "مبلغ الميزانية",
+      "start-date": "تاريخ البدء",
+      "start-date-placeholder": "اختر تاريخ البدء",
+      "end-date": "تاريخ الانتهاء",
+      "end-date-placeholder": "اختر تاريخ الانتهاء",
+      "description-label": "الوصف",
+      "description-placeholder": "اكتب وصفًا لهذه الميزانية",
       "cancel": "إلغاء",
       "save": "إنشاء ميزانية",
+      "update": "تحديث الميزانية",
+      "created-success": "تم إنشاء الميزانية بنجاح",
+      "updated-success": "تم تحديث الميزانية بنجاح",
       "validation": {
+        "name": "أدخل عنوانًا",
+        "name-max": "يجب ألا يتجاوز العنوان 50 حرفًا",
         "category": "اختر فئة",
-        "limit": "أدخل حدًا أكبر من صفر"
+        "amount": "أدخل مبلغًا أكبر من صفر",
+        "start-date": "اختر تاريخ البدء",
+        "end-date": "اختر تاريخ الانتهاء",
+        "date-range": "يجب أن يكون تاريخ الانتهاء في يوم البدء أو بعده",
+        "description": "أدخل وصفًا"
       }
     }
   }

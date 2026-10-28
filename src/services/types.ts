@@ -69,3 +69,50 @@ export interface UpdateCategoryVariables {
   categoryId: string;
   category: CreateCategoryRequest;
 }
+
+export interface BudgetItem {
+  id: string;
+  name: string;
+  description: string;
+  amount: string;
+  startDate: string;
+  endDate: string;
+  userId: string | null;
+  categoryId: string;
+  category: Category;
+  transactions: {
+    id: string;
+    amount: string;
+    description: string;
+    type: 'EXPENSE';
+    transactionDate: string;
+  }[];
+  spentAmount: string;
+  remainingAmount: string;
+}
+
+export type BudgetsResponse = ApiResponse<BudgetItem[]> & {
+  pagination: Pagination;
+};
+
+export interface GetBudgetsParams {
+  page?: number;
+  limit?: number;
+  order?: 'asc' | 'desc';
+  search?: string;
+  categoryId?: string;
+}
+
+export interface CreateBudgetRequest {
+  name: string;
+  description: string;
+  amount: number;
+  startDate: string;
+  endDate: string;
+  categoryId: string;
+}
+
+export interface UpdateBudgetVariables {
+  budgetId: string;
+  budget: CreateBudgetRequest;
+}

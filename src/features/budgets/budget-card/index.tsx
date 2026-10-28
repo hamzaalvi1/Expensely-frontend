@@ -1,9 +1,11 @@
 import { Box, Card, Stack } from '@mantine/core';
+import { useTranslation } from 'react-i18next';
 
 import {
   calculatePercentage,
   clampPercentage,
-  isBudgetAtLimit,
+  getBudgetProgressColor,
+  getBudgetStatus,
 } from '../helpers';
 import BudgetCardHeader from './budget-card-header';
 import BudgetCardInsight from './budget-card-insight';
@@ -17,17 +19,19 @@ const BudgetCard = ({
   limit,
   remaining,
   daysLeftText,
-  statusLabel,
   insight,
-  statusColor = 'primary.4',
-  progressColor = 'primary.4',
   currencyFormatter,
   editLabel = 'Edit budget',
+  deleteLabel = 'Delete budget',
   onEdit,
+  onDelete,
 }: BudgetCardProps) => {
+  const { t } = useTranslation();
   const percentage = Math.floor(calculatePercentage(spent, limit));
   const progressValue = clampPercentage(percentage);
-  const isOverBudget = isBudgetAtLimit(spent, limit);
+  const progressColor = getBudgetProgressColor(percentage);
+  const status = getBudgetStatus(percentage);
+  const isOverBudget = percentage >= 100;
 
   return (
     <Card
@@ -37,8 +41,8 @@ const BudgetCard = ({
       style={{
         position: 'relative',
         overflow: 'hidden',
-        borderColor: isOverBudget
-          ? 'var(--app-color-danger-border)'
+        border: isOverBudget
+          ? '1px solid var(--app-color-danger-border)'
           : undefined,
       }}
     >
@@ -46,10 +50,12 @@ const BudgetCard = ({
         <BudgetCardHeader
           category={category}
           categoryIcon={categoryIcon}
-          statusLabel={statusLabel}
-          statusColor={statusColor}
+          statusLabel={t(status.labelKey)}
+          statusColor={status.color}
           editLabel={editLabel}
+          deleteLabel={deleteLabel}
           onEdit={onEdit}
+          onDelete={onDelete}
         />
 
         <BudgetCardProgressSection

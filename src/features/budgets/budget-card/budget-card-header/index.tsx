@@ -2,10 +2,12 @@ import {
   ActionIcon,
   Badge,
   Flex,
+  Group,
   Stack,
   Text,
   ThemeIcon,
 } from '@mantine/core';
+import { FaTrashCan } from 'react-icons/fa6';
 
 import BudgetCategoryIcon from '@/assets/icons/Category';
 import BudgetEditIcon from '@/assets/icons/Edit';
@@ -18,7 +20,9 @@ const BudgetCardHeader = ({
   statusLabel,
   statusColor,
   editLabel,
+  deleteLabel,
   onEdit,
+  onDelete,
 }: BudgetCardHeaderProps) => (
   <Flex justify="space-between" align="flex-start">
     <Flex align="center" gap="md">
@@ -56,16 +60,28 @@ const BudgetCardHeader = ({
       </Stack>
     </Flex>
 
-    <ActionIcon
-      variant="subtle"
-      color="neutral.5"
-      size={30}
-      radius="sm"
-      aria-label={editLabel}
-      onClick={onEdit}
-    >
-      <BudgetEditIcon aria-hidden />
-    </ActionIcon>
+    <Group gap={0}>
+      <ActionIcon
+        variant="subtle"
+        color="neutral.5"
+        size={30}
+        radius="sm"
+        aria-label={editLabel}
+        onClick={onEdit}
+      >
+        <BudgetEditIcon aria-hidden />
+      </ActionIcon>
+      <ActionIcon
+        variant="subtle"
+        color="danger.5"
+        size={30}
+        radius="sm"
+        aria-label={deleteLabel}
+        onClick={onDelete}
+      >
+        <FaTrashCan size={14} aria-hidden />
+      </ActionIcon>
+    </Group>
   </Flex>
 );
 

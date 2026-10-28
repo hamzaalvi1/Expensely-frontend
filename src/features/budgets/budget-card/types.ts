@@ -8,13 +8,12 @@ export interface BudgetCardProps {
   limit: number;
   remaining: number;
   daysLeftText: ReactNode;
-  statusLabel: ReactNode;
   insight: ReactNode;
-  statusColor?: MantineColor;
-  progressColor?: MantineColor;
   currencyFormatter?: Omit<NumberFormatterProps, 'value'>;
   editLabel?: string;
+  deleteLabel?: string;
   onEdit?: () => void;
+  onDelete?: () => void;
 }
 
 
